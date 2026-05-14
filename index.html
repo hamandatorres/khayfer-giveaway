@@ -1,1372 +1,1544 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <meta name="theme-color" content="#FF6B35">
-  <meta name="description" content="Khayfer Liquidation x PoncakeA&A Summer Giveaway — Enter to win a Summer Gift Basket! May 19–23, 2025.">
-  <title>Khayfer Giveaway × PoncakeA&A 🎉</title>
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
+		<meta name="theme-color" content="#FF6B35" />
+		<meta
+			name="description"
+			content="Khayfer Liquidation x PoncakeA&A Summer Giveaway — Enter to win a Summer Gift Basket! May 19–23, 2025."
+		/>
+		<title>Khayfer Giveaway × PoncakeA&A 🎉</title>
 
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+		<!-- Google Fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800&display=swap"
+			rel="stylesheet"
+		/>
 
-  <style>
-    /* ============================================================
+		<style>
+			/* ============================================================
        RESET & CSS CUSTOM PROPERTIES
     ============================================================ */
-    *, *::before, *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+			*,
+			*::before,
+			*::after {
+				box-sizing: border-box;
+				margin: 0;
+				padding: 0;
+			}
 
-    :root {
-      --coral:       #FF6B35;
-      --orange:      #FF8C42;
-      --yellow:      #FFD166;
-      --peach:       #FFB347;
-      --cream:       #FFF5EC;
-      --warm-white:  #FFFBF7;
-      --dark:        #2D2D2D;
-      --gray:        #666666;
-      --light-gray:  #F5F5F5;
-      --border:      #FFD9B3;
-      --shadow:      rgba(255, 107, 53, 0.15);
-      --radius-sm:   10px;
-      --radius:      16px;
-      --radius-lg:   24px;
-    }
+			:root {
+				--coral: #ff6b35;
+				--orange: #ff8c42;
+				--yellow: #ffd166;
+				--peach: #ffb347;
+				--cream: #fff5ec;
+				--warm-white: #fffbf7;
+				--dark: #2d2d2d;
+				--gray: #666666;
+				--light-gray: #f5f5f5;
+				--border: #ffd9b3;
+				--shadow: rgba(255, 107, 53, 0.15);
+				--radius-sm: 10px;
+				--radius: 16px;
+				--radius-lg: 24px;
+			}
 
-    html {
-      scroll-behavior: smooth;
-    }
+			html {
+				scroll-behavior: smooth;
+			}
 
-    body {
-      font-family: 'Nunito', sans-serif;
-      background-color: var(--cream);
-      color: var(--dark);
-      font-size: 16px;
-      line-height: 1.6;
-      min-height: 100vh;
-      -webkit-font-smoothing: antialiased;
-    }
+			body {
+				font-family: "Nunito", sans-serif;
+				background-color: var(--cream);
+				color: var(--dark);
+				font-size: 16px;
+				line-height: 1.6;
+				min-height: 100vh;
+				-webkit-font-smoothing: antialiased;
+			}
 
-    /* ============================================================
+			/* ============================================================
        PAGE WRAPPER — Mobile-first, max 480px, centered
     ============================================================ */
-    .page-wrapper {
-      max-width: 480px;
-      margin: 0 auto;
-      background: var(--warm-white);
-      min-height: 100vh;
-      padding-bottom: 90px; /* space for sticky bottom bar */
-      position: relative;
-      overflow-x: hidden;
-    }
+			.page-wrapper {
+				max-width: 480px;
+				margin: 0 auto;
+				background: var(--warm-white);
+				min-height: 100vh;
+				padding-bottom: 90px; /* space for sticky bottom bar */
+				position: relative;
+				overflow-x: hidden;
+			}
 
-    @media (min-width: 481px) {
-      .page-wrapper {
-        box-shadow: 0 0 60px rgba(0, 0, 0, 0.12);
-        border-left: 1px solid var(--border);
-        border-right: 1px solid var(--border);
-      }
-    }
+			@media (min-width: 481px) {
+				.page-wrapper {
+					box-shadow: 0 0 60px rgba(0, 0, 0, 0.12);
+					border-left: 1px solid var(--border);
+					border-right: 1px solid var(--border);
+				}
+			}
 
-    /* ============================================================
+			/* ============================================================
        LANGUAGE TOGGLE BAR
     ============================================================ */
-    .lang-bar {
-      background: var(--dark);
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
-      padding: 8px 16px;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
+			.lang-bar {
+				background: var(--dark);
+				display: flex;
+				justify-content: flex-end;
+				align-items: center;
+				padding: 8px 16px;
+				position: sticky;
+				top: 0;
+				z-index: 100;
+			}
 
-    #lang-toggle {
-      background: var(--yellow);
-      color: var(--dark);
-      border: none;
-      border-radius: 20px;
-      padding: 8px 20px;
-      font-family: 'Nunito', sans-serif;
-      font-weight: 800;
-      font-size: 14px;
-      cursor: pointer;
-      min-height: 40px;
-      min-width: 80px;
-      transition: background 0.2s, transform 0.15s;
-      -webkit-tap-highlight-color: transparent;
-    }
+			#lang-toggle {
+				background: var(--yellow);
+				color: var(--dark);
+				border: none;
+				border-radius: 20px;
+				padding: 8px 20px;
+				font-family: "Nunito", sans-serif;
+				font-weight: 800;
+				font-size: 14px;
+				cursor: pointer;
+				min-height: 40px;
+				min-width: 80px;
+				transition:
+					background 0.2s,
+					transform 0.15s;
+				-webkit-tap-highlight-color: transparent;
+			}
 
-    #lang-toggle:hover,
-    #lang-toggle:focus {
-      background: var(--orange);
-      color: #fff;
-      outline: 3px solid var(--coral);
-      outline-offset: 2px;
-      transform: scale(1.04);
-    }
+			#lang-toggle:hover,
+			#lang-toggle:focus {
+				background: var(--orange);
+				color: #fff;
+				outline: 3px solid var(--coral);
+				outline-offset: 2px;
+				transform: scale(1.04);
+			}
 
-    /* ============================================================
+			/* ============================================================
        SITE HEADER
     ============================================================ */
-    .site-header {
-      background: linear-gradient(140deg, var(--coral) 0%, var(--orange) 55%, var(--peach) 100%);
-      padding: 36px 24px 28px;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
+			.site-header {
+				background: linear-gradient(
+					140deg,
+					var(--coral) 0%,
+					var(--orange) 55%,
+					var(--peach) 100%
+				);
+				padding: 36px 24px 28px;
+				text-align: center;
+				position: relative;
+				overflow: hidden;
+			}
 
-    /* Decorative emojis in background */
-    .site-header::before {
-      content: '☀️';
-      position: absolute;
-      font-size: 90px;
-      top: -18px;
-      right: -8px;
-      opacity: 0.2;
-      transform: rotate(20deg);
-      pointer-events: none;
-    }
+			/* Decorative emojis in background */
+			.site-header::before {
+				content: "☀️";
+				position: absolute;
+				font-size: 90px;
+				top: -18px;
+				right: -8px;
+				opacity: 0.2;
+				transform: rotate(20deg);
+				pointer-events: none;
+			}
 
-    .site-header::after {
-      content: '🌊';
-      position: absolute;
-      font-size: 70px;
-      bottom: -12px;
-      left: -6px;
-      opacity: 0.2;
-      pointer-events: none;
-    }
+			.site-header::after {
+				content: "🌊";
+				position: absolute;
+				font-size: 70px;
+				bottom: -12px;
+				left: -6px;
+				opacity: 0.2;
+				pointer-events: none;
+			}
 
-    .collab-badge {
-      display: inline-block;
-      background: rgba(255, 255, 255, 0.25);
-      border: 2px solid rgba(255, 255, 255, 0.5);
-      border-radius: 30px;
-      padding: 6px 18px;
-      font-size: 13px;
-      font-weight: 700;
-      color: #fff;
-      letter-spacing: 0.4px;
-      margin-bottom: 14px;
-    }
+			.collab-badge {
+				display: inline-block;
+				background: rgba(255, 255, 255, 0.25);
+				border: 2px solid rgba(255, 255, 255, 0.5);
+				border-radius: 30px;
+				padding: 6px 18px;
+				font-size: 13px;
+				font-weight: 700;
+				color: #fff;
+				letter-spacing: 0.4px;
+				margin-bottom: 14px;
+			}
 
-    .header-emoji {
-      font-size: 2.8rem;
-      display: block;
-      margin-bottom: 10px;
-      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
-    }
+			.header-emoji {
+				font-size: 2.8rem;
+				display: block;
+				margin-bottom: 10px;
+				filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+			}
 
-    .site-header h1 {
-      font-family: 'Fredoka One', cursive;
-      font-size: 2rem;
-      color: #fff;
-      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-      line-height: 1.15;
-    }
+			.site-header h1 {
+				font-family: "Fredoka One", cursive;
+				font-size: 2rem;
+				color: #fff;
+				text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+				line-height: 1.15;
+			}
 
-    /* ============================================================
+			/* ============================================================
        HERO / DATES BAND
     ============================================================ */
-    .hero {
-      background: linear-gradient(180deg, var(--orange) 0%, var(--yellow) 100%);
-      padding: 28px 24px;
-      text-align: center;
-    }
+			.hero {
+				background: linear-gradient(
+					180deg,
+					var(--orange) 0%,
+					var(--yellow) 100%
+				);
+				padding: 28px 24px;
+				text-align: center;
+			}
 
-    .dates-badge {
-      display: inline-flex;
-      flex-direction: column;
-      align-items: center;
-      background: #fff;
-      border-radius: var(--radius);
-      padding: 14px 28px;
-      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.12);
-      margin-bottom: 16px;
-    }
+			.dates-badge {
+				display: inline-flex;
+				flex-direction: column;
+				align-items: center;
+				background: #fff;
+				border-radius: var(--radius);
+				padding: 14px 28px;
+				box-shadow: 0 4px 18px rgba(0, 0, 0, 0.12);
+				margin-bottom: 16px;
+			}
 
-    .dates-main {
-      font-family: 'Fredoka One', cursive;
-      font-size: 1.3rem;
-      color: var(--coral);
-    }
+			.dates-main {
+				font-family: "Fredoka One", cursive;
+				font-size: 1.3rem;
+				color: var(--coral);
+			}
 
-    .dates-announce {
-      font-size: 13px;
-      color: var(--gray);
-      font-weight: 600;
-      margin-top: 3px;
-    }
+			.dates-announce {
+				font-size: 13px;
+				color: var(--gray);
+				font-weight: 600;
+				margin-top: 3px;
+			}
 
-    .hero-tagline {
-      color: rgba(255, 255, 255, 0.96);
-      font-weight: 700;
-      font-size: 1.05rem;
-    }
+			.hero-tagline {
+				color: rgba(255, 255, 255, 0.96);
+				font-weight: 700;
+				font-size: 1.05rem;
+			}
 
-    /* ============================================================
+			/* ============================================================
        SHARED SECTION STYLES
     ============================================================ */
-    section {
-      padding: 32px 20px;
-    }
+			section {
+				padding: 32px 20px;
+			}
 
-    .section-title {
-      font-family: 'Fredoka One', cursive;
-      font-size: 1.55rem;
-      color: var(--coral);
-      text-align: center;
-      margin-bottom: 24px;
-    }
+			.section-title {
+				font-family: "Fredoka One", cursive;
+				font-size: 1.55rem;
+				color: var(--coral);
+				text-align: center;
+				margin-bottom: 24px;
+			}
 
-    /* ============================================================
+			/* ============================================================
        HOW TO ENTER — STEPS
     ============================================================ */
-    .steps-section {
-      background: var(--warm-white);
-    }
+			.steps-section {
+				background: var(--warm-white);
+			}
 
-    .steps-list {
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-    }
+			.steps-list {
+				display: flex;
+				flex-direction: column;
+				gap: 14px;
+			}
 
-    .step-card {
-      display: flex;
-      align-items: flex-start;
-      gap: 16px;
-      background: #fff;
-      border: 2px solid var(--border);
-      border-radius: var(--radius);
-      padding: 16px;
-      box-shadow: 0 2px 10px var(--shadow);
-    }
+			.step-card {
+				display: flex;
+				align-items: flex-start;
+				gap: 16px;
+				background: #fff;
+				border: 2px solid var(--border);
+				border-radius: var(--radius);
+				padding: 16px;
+				box-shadow: 0 2px 10px var(--shadow);
+			}
 
-    .step-number {
-      flex-shrink: 0;
-      width: 46px;
-      height: 46px;
-      background: linear-gradient(135deg, var(--coral), var(--orange));
-      color: #fff;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: 'Fredoka One', cursive;
-      font-size: 1.3rem;
-      box-shadow: 0 2px 8px rgba(255, 107, 53, 0.35);
-    }
+			.step-number {
+				flex-shrink: 0;
+				width: 46px;
+				height: 46px;
+				background: linear-gradient(135deg, var(--coral), var(--orange));
+				color: #fff;
+				border-radius: 50%;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				font-family: "Fredoka One", cursive;
+				font-size: 1.3rem;
+				box-shadow: 0 2px 8px rgba(255, 107, 53, 0.35);
+			}
 
-    .step-content h3 {
-      font-family: 'Fredoka One', cursive;
-      font-size: 1.05rem;
-      color: var(--dark);
-      margin-bottom: 4px;
-    }
+			.step-content h3 {
+				font-family: "Fredoka One", cursive;
+				font-size: 1.05rem;
+				color: var(--dark);
+				margin-bottom: 4px;
+			}
 
-    .step-content p {
-      font-size: 0.875rem;
-      color: var(--gray);
-      line-height: 1.5;
-    }
+			.step-content p {
+				font-size: 0.875rem;
+				color: var(--gray);
+				line-height: 1.5;
+			}
 
-    /* ============================================================
+			/* ============================================================
        PRIZE SECTION
     ============================================================ */
-    .prize-section {
-      background: linear-gradient(180deg, #FFF5EC 0%, #FFEEDD 100%);
-    }
+			.prize-section {
+				background: linear-gradient(180deg, #fff5ec 0%, #ffeedd 100%);
+			}
 
-    .prize-basket {
-      background: #fff;
-      border-radius: var(--radius-lg);
-      border: 2px solid var(--border);
-      overflow: hidden;
-      box-shadow: 0 6px 24px var(--shadow);
-    }
+			.prize-basket {
+				background: #fff;
+				border-radius: var(--radius-lg);
+				border: 2px solid var(--border);
+				overflow: hidden;
+				box-shadow: 0 6px 24px var(--shadow);
+			}
 
-    .prize-header {
-      background: linear-gradient(135deg, var(--yellow) 0%, var(--peach) 100%);
-      padding: 24px 20px;
-      text-align: center;
-    }
+			.prize-header {
+				background: linear-gradient(
+					135deg,
+					var(--yellow) 0%,
+					var(--peach) 100%
+				);
+				padding: 24px 20px;
+				text-align: center;
+			}
 
-    .prize-emoji-large {
-      font-size: 3.2rem;
-      display: block;
-      margin-bottom: 10px;
-    }
+			.prize-emoji-large {
+				font-size: 3.2rem;
+				display: block;
+				margin-bottom: 10px;
+			}
 
-    .prize-header h3 {
-      font-family: 'Fredoka One', cursive;
-      font-size: 1.4rem;
-      color: var(--dark);
-    }
+			.prize-header h3 {
+				font-family: "Fredoka One", cursive;
+				font-size: 1.4rem;
+				color: var(--dark);
+			}
 
-    .prize-value-badge {
-      display: inline-block;
-      background: var(--coral);
-      color: #fff;
-      border-radius: 20px;
-      padding: 5px 16px;
-      font-size: 12px;
-      font-weight: 700;
-      margin-top: 10px;
-      letter-spacing: 0.3px;
-    }
+			.prize-value-badge {
+				display: inline-block;
+				background: var(--coral);
+				color: #fff;
+				border-radius: 20px;
+				padding: 5px 16px;
+				font-size: 12px;
+				font-weight: 700;
+				margin-top: 10px;
+				letter-spacing: 0.3px;
+			}
 
-    #prize-list {
-      list-style: none;
-      padding: 20px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-    }
+			#prize-list {
+				list-style: none;
+				padding: 20px;
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+				gap: 12px;
+			}
 
-    #prize-list li {
-      font-size: 0.875rem;
-      font-weight: 700;
-      color: var(--dark);
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      line-height: 1.3;
-    }
+			#prize-list li {
+				font-size: 0.875rem;
+				font-weight: 700;
+				color: var(--dark);
+				display: flex;
+				align-items: center;
+				gap: 6px;
+				line-height: 1.3;
+			}
 
-    @media (max-width: 360px) {
-      #prize-list {
-        grid-template-columns: 1fr;
-      }
-    }
+			@media (max-width: 360px) {
+				#prize-list {
+					grid-template-columns: 1fr;
+				}
+			}
 
-    /* ============================================================
+			/* ============================================================
        PARTNERS SECTION
     ============================================================ */
-    .partners-section {
-      background: var(--warm-white);
-    }
+			.partners-section {
+				background: var(--warm-white);
+			}
 
-    .partner-cards {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
+			.partner-cards {
+				display: flex;
+				flex-direction: column;
+				gap: 16px;
+			}
 
-    .partner-card {
-      background: #fff;
-      border-radius: var(--radius);
-      border: 2px solid var(--border);
-      padding: 20px;
-      box-shadow: 0 2px 12px var(--shadow);
-    }
+			.partner-card {
+				background: #fff;
+				border-radius: var(--radius);
+				border: 2px solid var(--border);
+				padding: 20px;
+				box-shadow: 0 2px 12px var(--shadow);
+			}
 
-    .partner-card-header {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      margin-bottom: 10px;
-    }
+			.partner-card-header {
+				display: flex;
+				align-items: center;
+				gap: 14px;
+				margin-bottom: 10px;
+			}
 
-    .partner-icon {
-      width: 50px;
-      height: 50px;
-      border-radius: 14px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.6rem;
-      flex-shrink: 0;
-    }
+			.partner-icon {
+				width: 50px;
+				height: 50px;
+				border-radius: 14px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				font-size: 1.6rem;
+				flex-shrink: 0;
+			}
 
-    .partner-icon.poncake  { background: linear-gradient(135deg, #FFD166, #FF8C42); }
-    .partner-icon.dreami   { background: linear-gradient(135deg, #A8E6CF, #3D9970); }
-    .partner-icon.khayfer  { background: linear-gradient(135deg, #FF6B35, #C0392B); }
+			.partner-icon.poncake {
+				background: linear-gradient(135deg, #ffd166, #ff8c42);
+			}
+			.partner-icon.dreami {
+				background: linear-gradient(135deg, #a8e6cf, #3d9970);
+			}
+			.partner-icon.khayfer {
+				background: linear-gradient(135deg, #ff6b35, #c0392b);
+			}
 
-    .partner-card h3 {
-      font-family: 'Fredoka One', cursive;
-      font-size: 1.15rem;
-      color: var(--dark);
-    }
+			.partner-card h3 {
+				font-family: "Fredoka One", cursive;
+				font-size: 1.15rem;
+				color: var(--dark);
+			}
 
-    .partner-card p {
-      font-size: 0.875rem;
-      color: var(--gray);
-      margin-bottom: 14px;
-      line-height: 1.55;
-    }
+			.partner-card p {
+				font-size: 0.875rem;
+				color: var(--gray);
+				margin-bottom: 14px;
+				line-height: 1.55;
+			}
 
-    .partner-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
+			.partner-links {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 8px;
+			}
 
-    /* Social link buttons */
-    .social-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 12px 18px;
-      border-radius: var(--radius-sm);
-      font-family: 'Nunito', sans-serif;
-      font-weight: 700;
-      font-size: 13px;
-      text-decoration: none;
-      min-height: 48px; /* Minimum tap target */
-      transition: transform 0.15s, opacity 0.15s;
-      -webkit-tap-highlight-color: transparent;
-    }
+			/* Social link buttons */
+			.social-btn {
+				display: inline-flex;
+				align-items: center;
+				gap: 6px;
+				padding: 12px 18px;
+				border-radius: var(--radius-sm);
+				font-family: "Nunito", sans-serif;
+				font-weight: 700;
+				font-size: 13px;
+				text-decoration: none;
+				min-height: 48px; /* Minimum tap target */
+				transition:
+					transform 0.15s,
+					opacity 0.15s;
+				-webkit-tap-highlight-color: transparent;
+			}
 
-    .social-btn:hover,
-    .social-btn:focus {
-      transform: scale(1.04);
-      opacity: 0.9;
-      outline: 3px solid rgba(0,0,0,0.2);
-      outline-offset: 2px;
-    }
+			.social-btn:hover,
+			.social-btn:focus {
+				transform: scale(1.04);
+				opacity: 0.9;
+				outline: 3px solid rgba(0, 0, 0, 0.2);
+				outline-offset: 2px;
+			}
 
-    .social-btn.facebook {
-      background: #1877F2;
-      color: #fff;
-    }
+			.social-btn.facebook {
+				background: #1877f2;
+				color: #fff;
+			}
 
-    .social-btn.instagram {
-      background: linear-gradient(135deg, #833AB4, #C13584, #E1306C, #F77737);
-      color: #fff;
-    }
+			.social-btn.instagram {
+				background: linear-gradient(135deg, #833ab4, #c13584, #e1306c, #f77737);
+				color: #fff;
+			}
 
-    /* ============================================================
+			/* ============================================================
        ENTRY FORM
     ============================================================ */
-    .form-section {
-      background: linear-gradient(180deg, #FFEEDD 0%, var(--cream) 100%);
-    }
+			.form-section {
+				background: linear-gradient(180deg, #ffeedd 0%, var(--cream) 100%);
+			}
 
-    #entry-form-container {
-      background: #fff;
-      border-radius: var(--radius-lg);
-      border: 2px solid var(--border);
-      padding: 24px 20px;
-      box-shadow: 0 6px 24px var(--shadow);
-    }
+			#entry-form-container {
+				background: #fff;
+				border-radius: var(--radius-lg);
+				border: 2px solid var(--border);
+				padding: 24px 20px;
+				box-shadow: 0 6px 24px var(--shadow);
+			}
 
-    .form-group {
-      margin-bottom: 18px;
-    }
+			.form-group {
+				margin-bottom: 18px;
+			}
 
-    .form-group label {
-      display: block;
-      font-weight: 700;
-      font-size: 0.9rem;
-      color: var(--dark);
-      margin-bottom: 7px;
-    }
+			.form-group label {
+				display: block;
+				font-weight: 700;
+				font-size: 0.9rem;
+				color: var(--dark);
+				margin-bottom: 7px;
+			}
 
-    /* Font size 16px prevents iOS auto-zoom on focus */
-    .form-group input[type="text"],
-    .form-group input[type="email"],
-    .form-group input[type="tel"] {
-      width: 100%;
-      padding: 14px 16px;
-      border: 2px solid var(--border);
-      border-radius: var(--radius-sm);
-      font-family: 'Nunito', sans-serif;
-      font-size: 16px;
-      color: var(--dark);
-      background: var(--cream);
-      transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
-      -webkit-appearance: none;
-      appearance: none;
-    }
+			/* Font size 16px prevents iOS auto-zoom on focus */
+			.form-group input[type="text"],
+			.form-group input[type="email"],
+			.form-group input[type="tel"] {
+				width: 100%;
+				padding: 14px 16px;
+				border: 2px solid var(--border);
+				border-radius: var(--radius-sm);
+				font-family: "Nunito", sans-serif;
+				font-size: 16px;
+				color: var(--dark);
+				background: var(--cream);
+				transition:
+					border-color 0.2s,
+					box-shadow 0.2s,
+					background 0.2s;
+				-webkit-appearance: none;
+				appearance: none;
+			}
 
-    .form-group input:focus {
-      outline: none;
-      border-color: var(--coral);
-      box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.18);
-      background: #fff;
-    }
+			.form-group input:focus {
+				outline: none;
+				border-color: var(--coral);
+				box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.18);
+				background: #fff;
+			}
 
-    .form-group input.error {
-      border-color: #E53E3E;
-      box-shadow: 0 0 0 3px rgba(229, 62, 62, 0.15);
-    }
+			.form-group input.error {
+				border-color: #e53e3e;
+				box-shadow: 0 0 0 3px rgba(229, 62, 62, 0.15);
+			}
 
-    .error-msg {
-      display: none;
-      color: #E53E3E;
-      font-size: 12px;
-      font-weight: 700;
-      margin-top: 5px;
-    }
+			.error-msg {
+				display: none;
+				color: #e53e3e;
+				font-size: 12px;
+				font-weight: 700;
+				margin-top: 5px;
+			}
 
-    .error-msg.visible {
-      display: block;
-    }
+			.error-msg.visible {
+				display: block;
+			}
 
-    /* Bonus social follow checkboxes */
-    .bonus-box {
-      background: linear-gradient(135deg, #FFFDE6, #FFF9CC);
-      border: 2px solid var(--yellow);
-      border-radius: var(--radius);
-      padding: 16px;
-      margin-bottom: 22px;
-    }
+			/* Bonus social follow checkboxes */
+			.bonus-box {
+				background: linear-gradient(135deg, #fffde6, #fff9cc);
+				border: 2px solid var(--yellow);
+				border-radius: var(--radius);
+				padding: 16px;
+				margin-bottom: 22px;
+			}
 
-    .bonus-box-title {
-      font-family: 'Fredoka One', cursive;
-      font-size: 1rem;
-      color: var(--dark);
-      margin-bottom: 12px;
-    }
+			.bonus-box-title {
+				font-family: "Fredoka One", cursive;
+				font-size: 1rem;
+				color: var(--dark);
+				margin-bottom: 12px;
+			}
 
-    .checkbox-label {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      padding: 10px 0;
-      cursor: pointer;
-      font-weight: 600;
-      font-size: 0.9rem;
-      color: var(--dark);
-      -webkit-tap-highlight-color: transparent;
-    }
+			.checkbox-label {
+				display: flex;
+				align-items: center;
+				gap: 12px;
+				padding: 10px 0;
+				cursor: pointer;
+				font-weight: 600;
+				font-size: 0.9rem;
+				color: var(--dark);
+				-webkit-tap-highlight-color: transparent;
+			}
 
-    .checkbox-label + .checkbox-label {
-      border-top: 1px solid rgba(255, 209, 102, 0.5);
-    }
+			.checkbox-label + .checkbox-label {
+				border-top: 1px solid rgba(255, 209, 102, 0.5);
+			}
 
-    .checkbox-label input[type="checkbox"] {
-      width: 24px;
-      height: 24px;
-      flex-shrink: 0;
-      accent-color: var(--coral);
-      cursor: pointer;
-    }
+			.checkbox-label input[type="checkbox"] {
+				width: 24px;
+				height: 24px;
+				flex-shrink: 0;
+				accent-color: var(--coral);
+				cursor: pointer;
+			}
 
-    .submit-btn {
-      width: 100%;
-      padding: 16px;
-      background: linear-gradient(135deg, var(--coral), var(--orange));
-      color: #fff;
-      border: none;
-      border-radius: 14px;
-      font-family: 'Fredoka One', cursive;
-      font-size: 1.25rem;
-      cursor: pointer;
-      min-height: 58px; /* Large tap target */
-      box-shadow: 0 4px 18px rgba(255, 107, 53, 0.45);
-      transition: transform 0.15s, box-shadow 0.15s;
-      -webkit-appearance: none;
-      appearance: none;
-      -webkit-tap-highlight-color: transparent;
-    }
+			.submit-btn {
+				width: 100%;
+				padding: 16px;
+				background: linear-gradient(135deg, var(--coral), var(--orange));
+				color: #fff;
+				border: none;
+				border-radius: 14px;
+				font-family: "Fredoka One", cursive;
+				font-size: 1.25rem;
+				cursor: pointer;
+				min-height: 58px; /* Large tap target */
+				box-shadow: 0 4px 18px rgba(255, 107, 53, 0.45);
+				transition:
+					transform 0.15s,
+					box-shadow 0.15s;
+				-webkit-appearance: none;
+				appearance: none;
+				-webkit-tap-highlight-color: transparent;
+			}
 
-    .submit-btn:hover,
-    .submit-btn:focus {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 28px rgba(255, 107, 53, 0.55);
-      outline: none;
-    }
+			.submit-btn:hover,
+			.submit-btn:focus {
+				transform: translateY(-2px);
+				box-shadow: 0 8px 28px rgba(255, 107, 53, 0.55);
+				outline: none;
+			}
 
-    .submit-btn:active {
-      transform: translateY(0);
-    }
+			.submit-btn:active {
+				transform: translateY(0);
+			}
 
-    /* Thank-you confirmation shown after submit */
-    #thank-you {
-      display: none;
-      text-align: center;
-      padding: 36px 20px;
-      background: #fff;
-      border-radius: var(--radius-lg);
-      border: 2px solid var(--border);
-      box-shadow: 0 6px 24px var(--shadow);
-    }
+			/* Thank-you confirmation shown after submit */
+			#thank-you {
+				display: none;
+				text-align: center;
+				padding: 36px 20px;
+				background: #fff;
+				border-radius: var(--radius-lg);
+				border: 2px solid var(--border);
+				box-shadow: 0 6px 24px var(--shadow);
+			}
 
-    #thank-you.visible {
-      display: block;
-    }
+			#thank-you.visible {
+				display: block;
+			}
 
-    .thank-you-emoji {
-      font-size: 3.8rem;
-      display: block;
-      margin-bottom: 14px;
-      animation: bounceAnim 0.7s ease-in-out infinite alternate;
-    }
+			.thank-you-emoji {
+				font-size: 3.8rem;
+				display: block;
+				margin-bottom: 14px;
+				animation: bounceAnim 0.7s ease-in-out infinite alternate;
+			}
 
-    @keyframes bounceAnim {
-      from { transform: translateY(0); }
-      to   { transform: translateY(-12px); }
-    }
+			@keyframes bounceAnim {
+				from {
+					transform: translateY(0);
+				}
+				to {
+					transform: translateY(-12px);
+				}
+			}
 
-    #thank-you h2 {
-      font-family: 'Fredoka One', cursive;
-      font-size: 1.65rem;
-      color: var(--coral);
-      margin-bottom: 12px;
-    }
+			#thank-you h2 {
+				font-family: "Fredoka One", cursive;
+				font-size: 1.65rem;
+				color: var(--coral);
+				margin-bottom: 12px;
+			}
 
-    #thank-you p {
-      color: var(--gray);
-      font-size: 0.95rem;
-      line-height: 1.65;
-    }
+			#thank-you p {
+				color: var(--gray);
+				font-size: 0.95rem;
+				line-height: 1.65;
+			}
 
-    /* ============================================================
+			/* ============================================================
        LEGAL DISCLAIMER
     ============================================================ */
-    .legal-section {
-      background: #F2F2F2;
-      padding: 24px 20px;
-    }
+			.legal-section {
+				background: #f2f2f2;
+				padding: 24px 20px;
+			}
 
-    .legal-title {
-      font-family: 'Fredoka One', cursive;
-      font-size: 0.95rem;
-      color: #888;
-      text-align: center;
-      margin-bottom: 10px;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
+			.legal-title {
+				font-family: "Fredoka One", cursive;
+				font-size: 0.95rem;
+				color: #888;
+				text-align: center;
+				margin-bottom: 10px;
+				text-transform: uppercase;
+				letter-spacing: 0.5px;
+			}
 
-    #legal-text {
-      font-size: 11px;
-      color: #888;
-      line-height: 1.75;
-      text-align: justify;
-    }
+			#legal-text {
+				font-size: 11px;
+				color: #888;
+				line-height: 1.75;
+				text-align: justify;
+			}
 
-    /* ============================================================
+			/* ============================================================
        FOOTER
     ============================================================ */
-    .site-footer {
-      background: var(--dark);
-      color: rgba(255, 255, 255, 0.55);
-      text-align: center;
-      padding: 16px 20px;
-      font-size: 12px;
-      font-weight: 600;
-    }
+			.site-footer {
+				background: var(--dark);
+				color: rgba(255, 255, 255, 0.55);
+				text-align: center;
+				padding: 16px 20px;
+				font-size: 12px;
+				font-weight: 600;
+			}
 
-    /* ============================================================
+			/* ============================================================
        STICKY BOTTOM BAR
     ============================================================ */
-    .sticky-bar {
-      position: fixed;
-      bottom: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 100%;
-      max-width: 480px;
-      background: rgba(255, 255, 255, 0.96);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      border-top: 2px solid var(--border);
-      padding: 10px 16px;
-      z-index: 200;
-      box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
-      transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-    }
+			.sticky-bar {
+				position: fixed;
+				bottom: 0;
+				left: 50%;
+				transform: translateX(-50%);
+				width: 100%;
+				max-width: 480px;
+				background: rgba(255, 255, 255, 0.96);
+				-webkit-backdrop-filter: blur(10px);
+				backdrop-filter: blur(10px);
+				border-top: 2px solid var(--border);
+				padding: 10px 16px;
+				z-index: 200;
+				box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
+				transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+			}
 
-    .sticky-bar.hidden {
-      transform: translateX(-50%) translateY(110%);
-    }
+			.sticky-bar.hidden {
+				transform: translateX(-50%) translateY(110%);
+			}
 
-    .sticky-enter-btn {
-      width: 100%;
-      padding: 15px;
-      background: linear-gradient(135deg, var(--coral), var(--orange));
-      color: #fff;
-      border: none;
-      border-radius: 14px;
-      font-family: 'Fredoka One', cursive;
-      font-size: 1.2rem;
-      cursor: pointer;
-      min-height: 52px;
-      box-shadow: 0 4px 16px rgba(255, 107, 53, 0.45);
-      transition: transform 0.15s, box-shadow 0.15s;
-      -webkit-appearance: none;
-      appearance: none;
-      -webkit-tap-highlight-color: transparent;
-    }
+			.sticky-enter-btn {
+				width: 100%;
+				padding: 15px;
+				background: linear-gradient(135deg, var(--coral), var(--orange));
+				color: #fff;
+				border: none;
+				border-radius: 14px;
+				font-family: "Fredoka One", cursive;
+				font-size: 1.2rem;
+				cursor: pointer;
+				min-height: 52px;
+				box-shadow: 0 4px 16px rgba(255, 107, 53, 0.45);
+				transition:
+					transform 0.15s,
+					box-shadow 0.15s;
+				-webkit-appearance: none;
+				appearance: none;
+				-webkit-tap-highlight-color: transparent;
+			}
 
-    .sticky-enter-btn:hover,
-    .sticky-enter-btn:focus {
-      transform: scale(1.02);
-      box-shadow: 0 6px 22px rgba(255, 107, 53, 0.55);
-      outline: none;
-    }
+			.sticky-enter-btn:hover,
+			.sticky-enter-btn:focus {
+				transform: scale(1.02);
+				box-shadow: 0 6px 22px rgba(255, 107, 53, 0.55);
+				outline: none;
+			}
 
-    /* ============================================================
+			/* ============================================================
        SMALL SCREEN TWEAKS
     ============================================================ */
-    @media (max-width: 360px) {
-      .site-header h1  { font-size: 1.7rem; }
-      .hero-title      { font-size: 1.45rem; }
-      .section-title   { font-size: 1.35rem; }
-    }
-  </style>
-</head>
+			@media (max-width: 360px) {
+				.site-header h1 {
+					font-size: 1.7rem;
+				}
+				.hero-title {
+					font-size: 1.45rem;
+				}
+				.section-title {
+					font-size: 1.35rem;
+				}
+			}
+		</style>
+	</head>
 
-<body>
-<div class="page-wrapper">
-
-  <!-- =====================================================
+	<body>
+		<div class="page-wrapper">
+			<!-- =====================================================
        LANGUAGE TOGGLE BAR
        (sticky — stays at top while scrolling)
   ====================================================== -->
-  <div class="lang-bar">
-    <button id="lang-toggle" onclick="toggleLanguage()" data-key="langBtn" aria-label="Switch to Spanish">
-      Español
-    </button>
-  </div>
+			<div class="lang-bar">
+				<button
+					id="lang-toggle"
+					onclick="toggleLanguage()"
+					data-key="langBtn"
+					aria-label="Switch to Spanish"
+				>
+					Español
+				</button>
+			</div>
 
-  <!-- =====================================================
+			<!-- =====================================================
        SITE HEADER
   ====================================================== -->
-  <header class="site-header">
-    <div class="collab-badge" data-key="headerTagline">PoncakeA&A × Khayfer Liquidation</div>
-    <span class="header-emoji" aria-hidden="true">🎉</span>
-    <h1 data-key="headerTitle">Win a Summer Gift Basket!</h1>
-  </header>
+			<header class="site-header">
+				<div class="collab-badge" data-key="headerTagline">
+					PoncakeA&A × Khayfer Liquidation
+				</div>
+				<span class="header-emoji" aria-hidden="true">🎉</span>
+				<h1 data-key="headerTitle">Win a Summer Gift Basket!</h1>
+			</header>
 
-  <!-- =====================================================
+			<!-- =====================================================
        HERO — DATES & TAGLINE
   ====================================================== -->
-  <section class="hero" aria-label="Giveaway dates">
-    <div class="dates-badge">
-      <span class="dates-main"    data-key="heroDates">May 19–23, 2025</span>
-      <span class="dates-announce" data-key="heroAnnounce">Winner announced May 24, 2025</span>
-    </div>
-    <p class="hero-tagline" data-key="heroTagline">Scan. Enter. Win. It's that simple! 🎉</p>
-  </section>
+			<section class="hero" aria-label="Giveaway dates">
+				<div class="dates-badge">
+					<span class="dates-main" data-key="heroDates">May 19–23, 2025</span>
+					<span class="dates-announce" data-key="heroAnnounce"
+						>Winner announced May 24, 2025</span
+					>
+				</div>
+				<p class="hero-tagline" data-key="heroTagline">
+					Scan. Enter. Win. It's that simple! 🎉
+				</p>
+			</section>
 
-  <!-- =====================================================
+			<!-- =====================================================
        HOW TO ENTER — 4 STEPS
   ====================================================== -->
-  <section class="steps-section" id="how-to-enter" aria-labelledby="steps-heading">
-    <h2 class="section-title" id="steps-heading" data-key="stepsTitle">How to Enter</h2>
+			<section
+				class="steps-section"
+				id="how-to-enter"
+				aria-labelledby="steps-heading"
+			>
+				<h2 class="section-title" id="steps-heading" data-key="stepsTitle">
+					How to Enter
+				</h2>
 
-    <div class="steps-list">
+				<div class="steps-list">
+					<!-- Step 1 -->
+					<div class="step-card">
+						<div class="step-number" aria-hidden="true">1</div>
+						<div class="step-content">
+							<h3 data-key="step1Title">Buy a Pastry 🥐</h3>
+							<p data-key="step1Desc">
+								Purchase a delicious pastry from PoncakeA&amp;A — available
+								online or in person at Dreami Tea in Russellville, AR.
+							</p>
+						</div>
+					</div>
 
-      <!-- Step 1 -->
-      <div class="step-card">
-        <div class="step-number" aria-hidden="true">1</div>
-        <div class="step-content">
-          <h3 data-key="step1Title">Buy a Pastry 🥐</h3>
-          <p data-key="step1Desc">Purchase a delicious pastry from PoncakeA&amp;A — available online or in person at Dreami Tea in Russellville, AR.</p>
-        </div>
-      </div>
+					<!-- Step 2 -->
+					<div class="step-card">
+						<div class="step-number" aria-hidden="true">2</div>
+						<div class="step-content">
+							<h3 data-key="step2Title">Scan the QR Code 📱</h3>
+							<p data-key="step2Desc">
+								Find the QR code on your pastry container and give it a scan.
+							</p>
+						</div>
+					</div>
 
-      <!-- Step 2 -->
-      <div class="step-card">
-        <div class="step-number" aria-hidden="true">2</div>
-        <div class="step-content">
-          <h3 data-key="step2Title">Scan the QR Code 📱</h3>
-          <p data-key="step2Desc">Find the QR code on your pastry container and give it a scan.</p>
-        </div>
-      </div>
+					<!-- Step 3 -->
+					<div class="step-card">
+						<div class="step-number" aria-hidden="true">3</div>
+						<div class="step-content">
+							<h3 data-key="step3Title">Fill Out the Form ✍️</h3>
+							<p data-key="step3Desc">
+								Enter your name, phone number, and email address below.
+							</p>
+						</div>
+					</div>
 
-      <!-- Step 3 -->
-      <div class="step-card">
-        <div class="step-number" aria-hidden="true">3</div>
-        <div class="step-content">
-          <h3 data-key="step3Title">Fill Out the Form ✍️</h3>
-          <p data-key="step3Desc">Enter your name, phone number, and email address below.</p>
-        </div>
-      </div>
+					<!-- Step 4 — Bonus entries -->
+					<div class="step-card">
+						<div class="step-number" aria-hidden="true">4</div>
+						<div class="step-content">
+							<h3 data-key="step4Title">Bonus Entries! 🌟</h3>
+							<p data-key="step4Desc">
+								Follow @KhayferLiquidation on Facebook and/or Instagram for
+								additional entries.
+							</p>
+						</div>
+					</div>
+				</div>
+			</section>
 
-      <!-- Step 4 — Bonus entries -->
-      <div class="step-card">
-        <div class="step-number" aria-hidden="true">4</div>
-        <div class="step-content">
-          <h3 data-key="step4Title">Bonus Entries! 🌟</h3>
-          <p data-key="step4Desc">Follow @KhayferLiquidation on Facebook and/or Instagram for additional entries.</p>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- =====================================================
+			<!-- =====================================================
        PRIZE — SUMMER GIFT BASKET
   ====================================================== -->
-  <section class="prize-section" aria-labelledby="prize-heading">
-    <h2 class="section-title" id="prize-heading" data-key="prizeTitle">The Prize 🎁</h2>
+			<section class="prize-section" aria-labelledby="prize-heading">
+				<h2 class="section-title" id="prize-heading" data-key="prizeTitle">
+					The Prize 🎁
+				</h2>
 
-    <div class="prize-basket">
-      <!-- Basket header -->
-      <div class="prize-header">
-        <span class="prize-emoji-large" aria-hidden="true">🧺</span>
-        <h3 data-key="prizeSubtitle">Summer Gift Basket</h3>
-        <span class="prize-value-badge" data-key="prizeValue">Approximate retail value: ~$50</span>
-      </div>
+				<div class="prize-basket">
+					<!-- Basket header -->
+					<div class="prize-header">
+						<span class="prize-emoji-large" aria-hidden="true">🧺</span>
+						<h3 data-key="prizeSubtitle">Summer Gift Basket</h3>
+						<span class="prize-value-badge" data-key="prizeValue"
+							>Approximate retail value: ~$50</span
+						>
+					</div>
 
-      <!-- Items list — populated by JS so both languages work -->
-      <ul id="prize-list" aria-label="Prize contents">
-        <!-- Filled by renderPrizeItems() on load and on language toggle -->
-      </ul>
-    </div>
-  </section>
+					<!-- Items list — populated by JS so both languages work -->
+					<ul id="prize-list" aria-label="Prize contents">
+						<!-- Filled by renderPrizeItems() on load and on language toggle -->
+					</ul>
+				</div>
+			</section>
 
-  <!-- =====================================================
+			<!-- =====================================================
        PARTNERS — 3 BUSINESS CARDS
   ====================================================== -->
-  <section class="partners-section" aria-labelledby="partners-heading">
-    <h2 class="section-title" id="partners-heading" data-key="partnersTitle">The Dream Team</h2>
+			<section class="partners-section" aria-labelledby="partners-heading">
+				<h2
+					class="section-title"
+					id="partners-heading"
+					data-key="partnersTitle"
+				>
+					The Dream Team
+				</h2>
 
-    <div class="partner-cards">
+				<div class="partner-cards">
+					<!-- ── PoncakeA&A ── -->
+					<div class="partner-card">
+						<div class="partner-card-header">
+							<div class="partner-icon poncake" aria-hidden="true">🥐</div>
+							<h3 data-key="poncakeTitle">PoncakeA&amp;A</h3>
+						</div>
+						<p data-key="poncakeDesc">
+							Your pastry partner! Handcrafted pastries available online and in
+							person.
+						</p>
+						<div class="partner-links">
+							<!-- REPLACE: PoncakeA&A Facebook URL — swap the href value below -->
+							<a
+								href="https://www.facebook.com/REPLACE_PONCAKE_FACEBOOK_URL"
+								target="_blank"
+								rel="noopener noreferrer"
+								class="social-btn facebook"
+								data-key="poncakeFBBtn"
+								>📘 Find Us on Facebook</a
+							>
+						</div>
+					</div>
 
-      <!-- ── PoncakeA&A ── -->
-      <div class="partner-card">
-        <div class="partner-card-header">
-          <div class="partner-icon poncake" aria-hidden="true">🥐</div>
-          <h3 data-key="poncakeTitle">PoncakeA&amp;A</h3>
-        </div>
-        <p data-key="poncakeDesc">Your pastry partner! Handcrafted pastries available online and in person.</p>
-        <div class="partner-links">
-          <!-- REPLACE: PoncakeA&A Facebook URL — swap the href value below -->
-          <a
-            href="https://www.facebook.com/REPLACE_PONCAKE_FACEBOOK_URL"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="social-btn facebook"
-            data-key="poncakeFBBtn"
-          >📘 Find Us on Facebook</a>
-        </div>
-      </div>
+					<!-- ── Dreami Tea ── -->
+					<div class="partner-card">
+						<div class="partner-card-header">
+							<div class="partner-icon dreami" aria-hidden="true">🍵</div>
+							<h3 data-key="dreamiTitle">Dreami Tea</h3>
+						</div>
+						<p data-key="dreamiDesc">
+							In-person pastry pickup location in Russellville, AR. Check their
+							Facebook page for current hours.
+						</p>
+						<div class="partner-links">
+							<!-- REPLACE: Dreami Tea Facebook URL — swap the href value below -->
+							<a
+								href="https://www.facebook.com/REPLACE_DREAMI_TEA_FACEBOOK_URL"
+								target="_blank"
+								rel="noopener noreferrer"
+								class="social-btn facebook"
+								data-key="dreamiFBBtn"
+								>📘 Check Hours on Facebook</a
+							>
+						</div>
+					</div>
 
-      <!-- ── Dreami Tea ── -->
-      <div class="partner-card">
-        <div class="partner-card-header">
-          <div class="partner-icon dreami" aria-hidden="true">🍵</div>
-          <h3 data-key="dreamiTitle">Dreami Tea</h3>
-        </div>
-        <p data-key="dreamiDesc">In-person pastry pickup location in Russellville, AR. Check their Facebook page for current hours.</p>
-        <div class="partner-links">
-          <!-- REPLACE: Dreami Tea Facebook URL — swap the href value below -->
-          <a
-            href="https://www.facebook.com/REPLACE_DREAMI_TEA_FACEBOOK_URL"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="social-btn facebook"
-            data-key="dreamiFBBtn"
-          >📘 Check Hours on Facebook</a>
-        </div>
-      </div>
+					<!-- ── Khayfer Liquidation ── -->
+					<div class="partner-card">
+						<div class="partner-card-header">
+							<div class="partner-icon khayfer" aria-hidden="true">🛍️</div>
+							<h3 data-key="khayferTitle">Khayfer Liquidation</h3>
+						</div>
+						<p data-key="khayferDesc">
+							Liquidation &amp; resale deals you'll love. Giveaway host and
+							prize sponsor.
+						</p>
+						<div class="partner-links">
+							<!-- REPLACE: Khayfer Liquidation Facebook URL — swap the href value below -->
+							<a
+								href="https://www.facebook.com/REPLACE_KHAYFER_FACEBOOK_URL"
+								target="_blank"
+								rel="noopener noreferrer"
+								class="social-btn facebook"
+								data-key="khayferFBBtn"
+								>📘 Follow on Facebook</a
+							>
 
-      <!-- ── Khayfer Liquidation ── -->
-      <div class="partner-card">
-        <div class="partner-card-header">
-          <div class="partner-icon khayfer" aria-hidden="true">🛍️</div>
-          <h3 data-key="khayferTitle">Khayfer Liquidation</h3>
-        </div>
-        <p data-key="khayferDesc">Liquidation &amp; resale deals you'll love. Giveaway host and prize sponsor.</p>
-        <div class="partner-links">
-          <!-- REPLACE: Khayfer Liquidation Facebook URL — swap the href value below -->
-          <a
-            href="https://www.facebook.com/REPLACE_KHAYFER_FACEBOOK_URL"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="social-btn facebook"
-            data-key="khayferFBBtn"
-          >📘 Follow on Facebook</a>
+							<!-- REPLACE: Khayfer Liquidation Instagram URL — swap the href value below -->
+							<a
+								href="https://www.instagram.com/REPLACE_KHAYFER_INSTAGRAM_URL"
+								target="_blank"
+								rel="noopener noreferrer"
+								class="social-btn instagram"
+								data-key="khayferIGBtn"
+								>📷 Follow on Instagram</a
+							>
+						</div>
+					</div>
+				</div>
+			</section>
 
-          <!-- REPLACE: Khayfer Liquidation Instagram URL — swap the href value below -->
-          <a
-            href="https://www.instagram.com/REPLACE_KHAYFER_INSTAGRAM_URL"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="social-btn instagram"
-            data-key="khayferIGBtn"
-          >📷 Follow on Instagram</a>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- =====================================================
+			<!-- =====================================================
        ENTRY FORM
   ====================================================== -->
-  <section class="form-section" id="entry-section" aria-labelledby="form-heading">
-    <h2 class="section-title" id="form-heading" data-key="formTitle">Enter the Giveaway</h2>
+			<section
+				class="form-section"
+				id="entry-section"
+				aria-labelledby="form-heading"
+			>
+				<h2 class="section-title" id="form-heading" data-key="formTitle">
+					Enter the Giveaway
+				</h2>
 
-    <!-- Form card -->
-    <div id="entry-form-container">
-      <form id="entry-form" novalidate onsubmit="handleSubmit(event)">
+				<!-- Form card -->
+				<div id="entry-form-container">
+					<form id="entry-form" novalidate onsubmit="handleSubmit(event)">
+						<!-- Name -->
+						<div class="form-group">
+							<label for="field-name" data-key="formNameLabel">Full Name</label>
+							<input
+								type="text"
+								id="field-name"
+								name="name"
+								autocomplete="name"
+								placeholder="Your full name"
+								data-placeholder-key="formNamePlaceholder"
+								required
+								aria-required="true"
+								aria-describedby="err-name"
+							/>
+							<span
+								class="error-msg"
+								id="err-name"
+								role="alert"
+								data-key="errName"
+							>
+								Please enter your full name.
+							</span>
+						</div>
 
-        <!-- Name -->
-        <div class="form-group">
-          <label for="field-name" data-key="formNameLabel">Full Name</label>
-          <input
-            type="text"
-            id="field-name"
-            name="name"
-            autocomplete="name"
-            placeholder="Your full name"
-            data-placeholder-key="formNamePlaceholder"
-            required
-            aria-required="true"
-            aria-describedby="err-name"
-          >
-          <span class="error-msg" id="err-name" role="alert" data-key="errName">
-            Please enter your full name.
-          </span>
-        </div>
+						<!-- Email -->
+						<div class="form-group">
+							<label for="field-email" data-key="formEmailLabel"
+								>Email Address</label
+							>
+							<input
+								type="email"
+								id="field-email"
+								name="email"
+								autocomplete="email"
+								placeholder="your@email.com"
+								data-placeholder-key="formEmailPlaceholder"
+								required
+								aria-required="true"
+								aria-describedby="err-email"
+							/>
+							<span
+								class="error-msg"
+								id="err-email"
+								role="alert"
+								data-key="errEmail"
+							>
+								Please enter a valid email address.
+							</span>
+						</div>
 
-        <!-- Email -->
-        <div class="form-group">
-          <label for="field-email" data-key="formEmailLabel">Email Address</label>
-          <input
-            type="email"
-            id="field-email"
-            name="email"
-            autocomplete="email"
-            placeholder="your@email.com"
-            data-placeholder-key="formEmailPlaceholder"
-            required
-            aria-required="true"
-            aria-describedby="err-email"
-          >
-          <span class="error-msg" id="err-email" role="alert" data-key="errEmail">
-            Please enter a valid email address.
-          </span>
-        </div>
+						<!-- Phone -->
+						<div class="form-group">
+							<label for="field-phone" data-key="formPhoneLabel"
+								>Phone Number</label
+							>
+							<input
+								type="tel"
+								id="field-phone"
+								name="phone"
+								autocomplete="tel"
+								placeholder="(555) 555-5555"
+								data-placeholder-key="formPhonePlaceholder"
+								required
+								aria-required="true"
+								aria-describedby="err-phone"
+							/>
+							<span
+								class="error-msg"
+								id="err-phone"
+								role="alert"
+								data-key="errPhone"
+							>
+								Please enter a valid phone number (10 digits).
+							</span>
+						</div>
 
-        <!-- Phone -->
-        <div class="form-group">
-          <label for="field-phone" data-key="formPhoneLabel">Phone Number</label>
-          <input
-            type="tel"
-            id="field-phone"
-            name="phone"
-            autocomplete="tel"
-            placeholder="(555) 555-5555"
-            data-placeholder-key="formPhonePlaceholder"
-            required
-            aria-required="true"
-            aria-describedby="err-phone"
-          >
-          <span class="error-msg" id="err-phone" role="alert" data-key="errPhone">
-            Please enter a valid phone number (10 digits).
-          </span>
-        </div>
+						<!-- Bonus entries — social follow checkboxes -->
+						<div class="bonus-box">
+							<p class="bonus-box-title" data-key="bonusTitle">
+								🌟 Bonus Entries — Follow Us!
+							</p>
 
-        <!-- Bonus entries — social follow checkboxes -->
-        <div class="bonus-box">
-          <p class="bonus-box-title" data-key="bonusTitle">🌟 Bonus Entries — Follow Us!</p>
+							<label class="checkbox-label">
+								<input type="checkbox" id="follow-fb" name="follow_fb" />
+								<span data-key="bonusFB"
+									>I follow @KhayferLiquidation on Facebook</span
+								>
+							</label>
 
-          <label class="checkbox-label">
-            <input type="checkbox" id="follow-fb" name="follow_fb">
-            <span data-key="bonusFB">I follow @KhayferLiquidation on Facebook</span>
-          </label>
+							<label class="checkbox-label">
+								<input type="checkbox" id="follow-ig" name="follow_ig" />
+								<span data-key="bonusIG"
+									>I follow @KhayferLiquidation on Instagram</span
+								>
+							</label>
+						</div>
 
-          <label class="checkbox-label">
-            <input type="checkbox" id="follow-ig" name="follow_ig">
-            <span data-key="bonusIG">I follow @KhayferLiquidation on Instagram</span>
-          </label>
-        </div>
+						<button type="submit" class="submit-btn" data-key="submitBtn">
+							Submit My Entry! 🎉
+						</button>
+					</form>
+				</div>
+				<!-- /#entry-form-container -->
 
-        <button type="submit" class="submit-btn" data-key="submitBtn">
-          Submit My Entry! 🎉
-        </button>
+				<!-- Thank-you message — hidden until form is submitted -->
+				<div id="thank-you" role="status" aria-live="polite">
+					<span class="thank-you-emoji" aria-hidden="true">🎊</span>
+					<h2 data-key="thankYouTitle">You're Entered!</h2>
+					<p data-key="thankYouMsg">
+						Thank you for entering! Good luck — the winner will be announced on
+						May 24, 2025. Make sure you follow @KhayferLiquidation so you don't
+						miss the announcement!
+					</p>
+				</div>
+			</section>
 
-      </form>
-    </div><!-- /#entry-form-container -->
-
-    <!-- Thank-you message — hidden until form is submitted -->
-    <div id="thank-you" role="status" aria-live="polite">
-      <span class="thank-you-emoji" aria-hidden="true">🎊</span>
-      <h2 data-key="thankYouTitle">You're Entered!</h2>
-      <p  data-key="thankYouMsg">Thank you for entering! Good luck — the winner will be announced on May 24, 2025. Make sure you follow @KhayferLiquidation so you don't miss the announcement!</p>
-    </div>
-
-  </section>
-
-  <!-- =====================================================
+			<!-- =====================================================
        LEGAL DISCLAIMER
        (required in both English and Spanish — toggled by JS)
   ====================================================== -->
-  <section class="legal-section" aria-labelledby="legal-heading">
-    <h2 class="legal-title" id="legal-heading" data-key="legalTitle">Official Rules &amp; Disclaimer</h2>
-    <p id="legal-text" data-key="legalText">
-      NO PURCHASE NECESSARY TO ENTER OR WIN. Open to legal residents of the United States, 18 years
-      of age or older. Giveaway period: May 19–23, 2025. Winner announced May 24, 2025. One (1)
-      winner will be selected randomly from all eligible entries. Prize: Summer Gift Basket
-      (approximate retail value ~$50). Contents subject to change. Void where prohibited by law.
-      <br><br>
-      This promotion is in no way sponsored, endorsed, administered by, or associated with Facebook
-      or Instagram. By participating, entrants acknowledge that Meta Platforms, Inc. bears no
-      responsibility and is not liable for any claim related to this promotion. Any questions
-      regarding this giveaway should be directed to Khayfer Liquidation, not to Meta Platforms, Inc.
-      Sponsor: Khayfer Liquidation, Russellville, AR.
-    </p>
-  </section>
+			<section class="legal-section" aria-labelledby="legal-heading">
+				<h2 class="legal-title" id="legal-heading" data-key="legalTitle">
+					Official Rules &amp; Disclaimer
+				</h2>
+				<p id="legal-text" data-key="legalText">
+					NO PURCHASE NECESSARY TO ENTER OR WIN. Open to legal residents of the
+					United States, 18 years of age or older. Giveaway period: May 19–23,
+					2025. Winner announced May 24, 2025. One (1) winner will be selected
+					randomly from all eligible entries. Prize: Summer Gift Basket
+					(approximate retail value ~$50). Contents subject to change. Void
+					where prohibited by law.
+					<br /><br />
+					This promotion is in no way sponsored, endorsed, administered by, or
+					associated with Facebook or Instagram. By participating, entrants
+					acknowledge that Meta Platforms, Inc. bears no responsibility and is
+					not liable for any claim related to this promotion. Any questions
+					regarding this giveaway should be directed to Khayfer Liquidation, not
+					to Meta Platforms, Inc. Sponsor: Khayfer Liquidation, Russellville,
+					AR.
+				</p>
+			</section>
 
-  <!-- =====================================================
+			<!-- =====================================================
        FOOTER
   ====================================================== -->
-  <footer class="site-footer">
-    <p data-key="footerText">© 2025 Khayfer Liquidation × PoncakeA&A. All rights reserved.</p>
-  </footer>
+			<footer class="site-footer">
+				<p data-key="footerText">
+					© 2025 Khayfer Liquidation × PoncakeA&A. All rights reserved.
+				</p>
+			</footer>
+		</div>
+		<!-- /.page-wrapper -->
 
-</div><!-- /.page-wrapper -->
-
-<!-- =====================================================
+		<!-- =====================================================
      STICKY BOTTOM BAR
      Hides automatically when the entry form is on-screen.
 ====================================================== -->
-<div class="sticky-bar" id="sticky-bar" role="complementary" aria-label="Quick entry shortcut">
-  <button class="sticky-enter-btn" onclick="scrollToForm()" data-key="stickyBtn">
-    Enter Now 🎉
-  </button>
-</div>
+		<div
+			class="sticky-bar"
+			id="sticky-bar"
+			role="complementary"
+			aria-label="Quick entry shortcut"
+		>
+			<button
+				class="sticky-enter-btn"
+				onclick="scrollToForm()"
+				data-key="stickyBtn"
+			>
+				Enter Now 🎉
+			</button>
+		</div>
 
-
-<!-- =====================================================
+		<!-- =====================================================
      JAVASCRIPT
      • Language toggle (EN ↔ ES)
      • Form validation
      • Thank-you reveal
      • Sticky bar IntersectionObserver
 ====================================================== -->
-<script>
-
-  /* ==============================================================
+		<script>
+			/* ==============================================================
      TRANSLATIONS
      All user-facing strings for English and Spanish.
      To swap a URL, find the matching <a href="…"> in the HTML
      and replace the placeholder value there.
   ============================================================== */
-  const translations = {
+			const translations = {
+				en: {
+					langBtn: "Español",
+					headerTagline: "PoncakeA\u0026A × Khayfer Liquidation",
+					headerTitle: "Win a Summer Gift Basket!",
+					heroDates: "May 19\u201323, 2025",
+					heroAnnounce: "Winner announced May 24, 2025",
+					heroTagline: "Scan. Enter. Win. It\u2019s that simple! \uD83C\uDF89",
 
-    en: {
-      langBtn:            "Español",
-      headerTagline:      "PoncakeA\u0026A × Khayfer Liquidation",
-      headerTitle:        "Win a Summer Gift Basket!",
-      heroDates:          "May 19\u201323, 2025",
-      heroAnnounce:       "Winner announced May 24, 2025",
-      heroTagline:        "Scan. Enter. Win. It\u2019s that simple! \uD83C\uDF89",
+					stepsTitle: "How to Enter",
+					step1Title: "Buy a Pastry \uD83E\uDD50",
+					step1Desc:
+						"Purchase a delicious pastry from PoncakeA&A \u2014 available online or in person at Dreami Tea in Russellville, AR.",
+					step2Title: "Scan the QR Code \uD83D\uDCF1",
+					step2Desc:
+						"Find the QR code on your pastry container and give it a scan.",
+					step3Title: "Fill Out the Form \u270D\uFE0F",
+					step3Desc: "Enter your name, phone number, and email address below.",
+					step4Title: "Bonus Entries! \uD83C\uDF1F",
+					step4Desc:
+						"Follow @KhayferLiquidation on Facebook and/or Instagram for additional entries.",
 
-      stepsTitle:         "How to Enter",
-      step1Title:         "Buy a Pastry \uD83E\uDD50",
-      step1Desc:          "Purchase a delicious pastry from PoncakeA&A \u2014 available online or in person at Dreami Tea in Russellville, AR.",
-      step2Title:         "Scan the QR Code \uD83D\uDCF1",
-      step2Desc:          "Find the QR code on your pastry container and give it a scan.",
-      step3Title:         "Fill Out the Form \u270D\uFE0F",
-      step3Desc:          "Enter your name, phone number, and email address below.",
-      step4Title:         "Bonus Entries! \uD83C\uDF1F",
-      step4Desc:          "Follow @KhayferLiquidation on Facebook and/or Instagram for additional entries.",
+					prizeTitle: "The Prize \uD83C\uDF81",
+					prizeSubtitle: "Summer Gift Basket",
+					prizeValue: "Approximate retail value: ~$50",
+					prizeItems: [
+						"\uD83D\uDD2B 2x XShot Water Guns",
+						"\uD83C\uDFD6\uFE0F Travel / Beach Blanket",
+						"\uD83C\uDFCA White Towels",
+						"\u2728 Kirkland Dry Facial Towels",
+						"\uD83D\uDC53 Wipe N Clear Lens Wipes",
+						"\u2600\uFE0F UPF 50+ Sun Socks",
+						"\uD83D\uDDD1\uFE0F Candle",
+						"\uD83D\uDC8C Greeting Card",
+					],
 
-      prizeTitle:         "The Prize \uD83C\uDF81",
-      prizeSubtitle:      "Summer Gift Basket",
-      prizeValue:         "Approximate retail value: ~$50",
-      prizeItems: [
-        "\uD83D\uDD2B 2x XShot Water Guns",
-        "\uD83C\uDFD6\uFE0F Travel / Beach Blanket",
-        "\uD83C\uDFCA White Towels",
-        "\u2728 Kirkland Dry Facial Towels",
-        "\uD83D\uDC53 Wipe N Clear Lens Wipes",
-        "\u2600\uFE0F UPF 50+ Sun Socks",
-        "\uD83D\uDDD1\uFE0F Candle",
-        "\uD83D\uDC8C Greeting Card"
-      ],
+					partnersTitle: "The Dream Team",
+					poncakeTitle: "PoncakeA\u0026A",
+					poncakeDesc:
+						"Your pastry partner! Handcrafted pastries available online and in person.",
+					poncakeFBBtn: "\uD83D\uDCD8 Find Us on Facebook",
+					dreamiTitle: "Dreami Tea",
+					dreamiDesc:
+						"In-person pastry pickup location in Russellville, AR. Check their Facebook page for current hours.",
+					dreamiFBBtn: "\uD83D\uDCD8 Check Hours on Facebook",
+					khayferTitle: "Khayfer Liquidation",
+					khayferDesc:
+						"Liquidation & resale deals you\u2019ll love. Giveaway host and prize sponsor.",
+					khayferFBBtn: "\uD83D\uDCD8 Follow on Facebook",
+					khayferIGBtn: "\uD83D\uDCF7 Follow on Instagram",
 
-      partnersTitle:      "The Dream Team",
-      poncakeTitle:       "PoncakeA\u0026A",
-      poncakeDesc:        "Your pastry partner! Handcrafted pastries available online and in person.",
-      poncakeFBBtn:       "\uD83D\uDCD8 Find Us on Facebook",
-      dreamiTitle:        "Dreami Tea",
-      dreamiDesc:         "In-person pastry pickup location in Russellville, AR. Check their Facebook page for current hours.",
-      dreamiFBBtn:        "\uD83D\uDCD8 Check Hours on Facebook",
-      khayferTitle:       "Khayfer Liquidation",
-      khayferDesc:        "Liquidation & resale deals you\u2019ll love. Giveaway host and prize sponsor.",
-      khayferFBBtn:       "\uD83D\uDCD8 Follow on Facebook",
-      khayferIGBtn:       "\uD83D\uDCF7 Follow on Instagram",
+					formTitle: "Enter the Giveaway",
+					formNameLabel: "Full Name",
+					formNamePlaceholder: "Your full name",
+					formEmailLabel: "Email Address",
+					formEmailPlaceholder: "your@email.com",
+					formPhoneLabel: "Phone Number",
+					formPhonePlaceholder: "(555) 555-5555",
+					bonusTitle: "\uD83C\uDF1F Bonus Entries \u2014 Follow Us!",
+					bonusFB: "I follow @KhayferLiquidation on Facebook",
+					bonusIG: "I follow @KhayferLiquidation on Instagram",
+					submitBtn: "Submit My Entry! \uD83C\uDF89",
 
-      formTitle:          "Enter the Giveaway",
-      formNameLabel:      "Full Name",
-      formNamePlaceholder:"Your full name",
-      formEmailLabel:     "Email Address",
-      formEmailPlaceholder:"your@email.com",
-      formPhoneLabel:     "Phone Number",
-      formPhonePlaceholder:"(555) 555-5555",
-      bonusTitle:         "\uD83C\uDF1F Bonus Entries \u2014 Follow Us!",
-      bonusFB:            "I follow @KhayferLiquidation on Facebook",
-      bonusIG:            "I follow @KhayferLiquidation on Instagram",
-      submitBtn:          "Submit My Entry! \uD83C\uDF89",
+					thankYouTitle: "You\u2019re Entered! \uD83C\uDF8A",
+					thankYouMsg:
+						"Thank you for entering! Good luck \u2014 the winner will be announced on May 24, 2025. Make sure you follow @KhayferLiquidation so you don\u2019t miss the announcement!",
 
-      thankYouTitle:      "You\u2019re Entered! \uD83C\uDF8A",
-      thankYouMsg:        "Thank you for entering! Good luck \u2014 the winner will be announced on May 24, 2025. Make sure you follow @KhayferLiquidation so you don\u2019t miss the announcement!",
+					stickyBtn: "Enter Now \uD83C\uDF89",
 
-      stickyBtn:          "Enter Now \uD83C\uDF89",
+					legalTitle: "Official Rules & Disclaimer",
+					legalText:
+						"NO PURCHASE NECESSARY TO ENTER OR WIN. Open to legal residents of the United States, 18 years of age or older. Giveaway period: May 19\u201323, 2025. Winner announced May 24, 2025. One (1) winner will be selected randomly from all eligible entries. Prize: Summer Gift Basket (approximate retail value ~$50). Contents subject to change. Void where prohibited by law.<br><br>This promotion is in no way sponsored, endorsed, administered by, or associated with Facebook or Instagram. By participating, entrants acknowledge that Meta Platforms, Inc. bears no responsibility and is not liable for any claim related to this promotion. Any questions regarding this giveaway should be directed to Khayfer Liquidation, not to Meta Platforms, Inc. Sponsor: Khayfer Liquidation, Russellville, AR.",
 
-      legalTitle:         "Official Rules & Disclaimer",
-      legalText:          "NO PURCHASE NECESSARY TO ENTER OR WIN. Open to legal residents of the United States, 18 years of age or older. Giveaway period: May 19\u201323, 2025. Winner announced May 24, 2025. One (1) winner will be selected randomly from all eligible entries. Prize: Summer Gift Basket (approximate retail value ~$50). Contents subject to change. Void where prohibited by law.<br><br>This promotion is in no way sponsored, endorsed, administered by, or associated with Facebook or Instagram. By participating, entrants acknowledge that Meta Platforms, Inc. bears no responsibility and is not liable for any claim related to this promotion. Any questions regarding this giveaway should be directed to Khayfer Liquidation, not to Meta Platforms, Inc. Sponsor: Khayfer Liquidation, Russellville, AR.",
+					footerText:
+						"\u00A9 2025 Khayfer Liquidation \u00D7 PoncakeA&A. All rights reserved.",
 
-      footerText:         "\u00A9 2025 Khayfer Liquidation \u00D7 PoncakeA&A. All rights reserved.",
+					errName: "Please enter your full name.",
+					errEmail: "Please enter a valid email address.",
+					errPhone: "Please enter a valid phone number (10 digits).",
+				},
 
-      errName:            "Please enter your full name.",
-      errEmail:           "Please enter a valid email address.",
-      errPhone:           "Please enter a valid phone number (10 digits)."
-    },
+				es: {
+					langBtn: "English",
+					headerTagline: "PoncakeA\u0026A × Khayfer Liquidation",
+					headerTitle: "\u00A1Gana una Canasta de Verano!",
+					heroDates: "19\u201323 de mayo de 2025",
+					heroAnnounce: "Ganador anunciado el 24 de mayo de 2025",
+					heroTagline:
+						"Escanea. Participa. Gana. \u00A1As\u00ED de f\u00E1cil! \uD83C\uDF89",
 
-    es: {
-      langBtn:            "English",
-      headerTagline:      "PoncakeA\u0026A × Khayfer Liquidation",
-      headerTitle:        "\u00A1Gana una Canasta de Verano!",
-      heroDates:          "19\u201323 de mayo de 2025",
-      heroAnnounce:       "Ganador anunciado el 24 de mayo de 2025",
-      heroTagline:        "Escanea. Participa. Gana. \u00A1As\u00ED de f\u00E1cil! \uD83C\uDF89",
+					stepsTitle: "C\u00F3mo Participar",
+					step1Title: "Compra un Pastel \uD83E\uDD50",
+					step1Desc:
+						"Adquiere un delicioso pastel de PoncakeA&A \u2014 disponible en l\u00EDnea o en persona en Dreami Tea en Russellville, AR.",
+					step2Title: "Escanea el C\u00F3digo QR \uD83D\uDCF1",
+					step2Desc:
+						"Encuentra el c\u00F3digo QR en tu recipiente del pastel y esc\u00E1nealo.",
+					step3Title: "Llena el Formulario \u270D\uFE0F",
+					step3Desc:
+						"Ingresa tu nombre, n\u00FAmero de tel\u00E9fono y correo electr\u00F3nico abajo.",
+					step4Title: "\u00A1Entradas Adicionales! \uD83C\uDF1F",
+					step4Desc:
+						"Sigue a @KhayferLiquidation en Facebook y/o Instagram para entradas adicionales.",
 
-      stepsTitle:         "C\u00F3mo Participar",
-      step1Title:         "Compra un Pastel \uD83E\uDD50",
-      step1Desc:          "Adquiere un delicioso pastel de PoncakeA&A \u2014 disponible en l\u00EDnea o en persona en Dreami Tea en Russellville, AR.",
-      step2Title:         "Escanea el C\u00F3digo QR \uD83D\uDCF1",
-      step2Desc:          "Encuentra el c\u00F3digo QR en tu recipiente del pastel y esc\u00E1nealo.",
-      step3Title:         "Llena el Formulario \u270D\uFE0F",
-      step3Desc:          "Ingresa tu nombre, n\u00FAmero de tel\u00E9fono y correo electr\u00F3nico abajo.",
-      step4Title:         "\u00A1Entradas Adicionales! \uD83C\uDF1F",
-      step4Desc:          "Sigue a @KhayferLiquidation en Facebook y/o Instagram para entradas adicionales.",
+					prizeTitle: "El Premio \uD83C\uDF81",
+					prizeSubtitle: "Canasta de Verano",
+					prizeValue: "Valor aproximado al por menor: ~$50",
+					prizeItems: [
+						"\uD83D\uDD2B 2 Pistolas de Agua XShot",
+						"\uD83C\uDFD6\uFE0F Cobija para Playa/Viaje",
+						"\uD83C\uDFCA Toallas Blancas",
+						"\u2728 Toallas Faciales Secas Kirkland",
+						"\uD83D\uDC53 Toallitas Wipe N Clear para Lentes",
+						"\u2600\uFE0F Calcetines UPF 50+ Protecci\u00F3n Solar",
+						"\uD83D\uDDD1\uFE0F Vela Arom\u00E1tica",
+						"\uD83D\uDC8C Tarjeta de Felicitaci\u00F3n",
+					],
 
-      prizeTitle:         "El Premio \uD83C\uDF81",
-      prizeSubtitle:      "Canasta de Verano",
-      prizeValue:         "Valor aproximado al por menor: ~$50",
-      prizeItems: [
-        "\uD83D\uDD2B 2 Pistolas de Agua XShot",
-        "\uD83C\uDFD6\uFE0F Cobija para Playa/Viaje",
-        "\uD83C\uDFCA Toallas Blancas",
-        "\u2728 Toallas Faciales Secas Kirkland",
-        "\uD83D\uDC53 Toallitas Wipe N Clear para Lentes",
-        "\u2600\uFE0F Calcetines UPF 50+ Protecci\u00F3n Solar",
-        "\uD83D\uDDD1\uFE0F Vela Arom\u00E1tica",
-        "\uD83D\uDC8C Tarjeta de Felicitaci\u00F3n"
-      ],
+					partnersTitle: "El Equipo So\u00F1ado",
+					poncakeTitle: "PoncakeA\u0026A",
+					poncakeDesc:
+						"\u00A1Tu pasteler\u00EDa favorita! Pasteles artesanales disponibles en l\u00EDnea y en persona.",
+					poncakeFBBtn: "\uD83D\uDCD8 Encu\u00E9ntranos en Facebook",
+					dreamiTitle: "Dreami Tea",
+					dreamiDesc:
+						"Punto de recogida de pasteles en persona en Russellville, AR. Consulta su p\u00E1gina de Facebook para ver los horarios.",
+					dreamiFBBtn: "\uD83D\uDCD8 Ver Horarios en Facebook",
+					khayferTitle: "Khayfer Liquidation",
+					khayferDesc:
+						"Ofertas de liquidaci\u00F3n y reventa que te encantar\u00E1n. Organizador del sorteo y patrocinador del premio.",
+					khayferFBBtn: "\uD83D\uDCD8 Seguir en Facebook",
+					khayferIGBtn: "\uD83D\uDCF7 Seguir en Instagram",
 
-      partnersTitle:      "El Equipo So\u00F1ado",
-      poncakeTitle:       "PoncakeA\u0026A",
-      poncakeDesc:        "\u00A1Tu pasteler\u00EDa favorita! Pasteles artesanales disponibles en l\u00EDnea y en persona.",
-      poncakeFBBtn:       "\uD83D\uDCD8 Encu\u00E9ntranos en Facebook",
-      dreamiTitle:        "Dreami Tea",
-      dreamiDesc:         "Punto de recogida de pasteles en persona en Russellville, AR. Consulta su p\u00E1gina de Facebook para ver los horarios.",
-      dreamiFBBtn:        "\uD83D\uDCD8 Ver Horarios en Facebook",
-      khayferTitle:       "Khayfer Liquidation",
-      khayferDesc:        "Ofertas de liquidaci\u00F3n y reventa que te encantar\u00E1n. Organizador del sorteo y patrocinador del premio.",
-      khayferFBBtn:       "\uD83D\uDCD8 Seguir en Facebook",
-      khayferIGBtn:       "\uD83D\uDCF7 Seguir en Instagram",
+					formTitle: "Participa en el Sorteo",
+					formNameLabel: "Nombre Completo",
+					formNamePlaceholder: "Tu nombre completo",
+					formEmailLabel: "Correo Electr\u00F3nico",
+					formEmailPlaceholder: "tu@correo.com",
+					formPhoneLabel: "N\u00FAmero de Tel\u00E9fono",
+					formPhonePlaceholder: "(555) 555-5555",
+					bonusTitle:
+						"\uD83C\uDF1F Entradas Adicionales \u2014 \u00A1S\u00EDguenos!",
+					bonusFB: "Sigo a @KhayferLiquidation en Facebook",
+					bonusIG: "Sigo a @KhayferLiquidation en Instagram",
+					submitBtn: "\u00A1Enviar mi Participaci\u00F3n! \uD83C\uDF89",
 
-      formTitle:          "Participa en el Sorteo",
-      formNameLabel:      "Nombre Completo",
-      formNamePlaceholder:"Tu nombre completo",
-      formEmailLabel:     "Correo Electr\u00F3nico",
-      formEmailPlaceholder:"tu@correo.com",
-      formPhoneLabel:     "N\u00FAmero de Tel\u00E9fono",
-      formPhonePlaceholder:"(555) 555-5555",
-      bonusTitle:         "\uD83C\uDF1F Entradas Adicionales \u2014 \u00A1S\u00EDguenos!",
-      bonusFB:            "Sigo a @KhayferLiquidation en Facebook",
-      bonusIG:            "Sigo a @KhayferLiquidation en Instagram",
-      submitBtn:          "\u00A1Enviar mi Participaci\u00F3n! \uD83C\uDF89",
+					thankYouTitle: "\u00A1Ya Est\u00E1s Participando! \uD83C\uDF8A",
+					thankYouMsg:
+						"\u00A1Gracias por participar! Buena suerte \u2014 el ganador ser\u00E1 anunciado el 24 de mayo de 2025. \u00A1Aseg\u00FArate de seguir a @KhayferLiquidation para no perderte el anuncio!",
 
-      thankYouTitle:      "\u00A1Ya Est\u00E1s Participando! \uD83C\uDF8A",
-      thankYouMsg:        "\u00A1Gracias por participar! Buena suerte \u2014 el ganador ser\u00E1 anunciado el 24 de mayo de 2025. \u00A1Aseg\u00FArate de seguir a @KhayferLiquidation para no perderte el anuncio!",
+					stickyBtn: "Participar Ahora \uD83C\uDF89",
 
-      stickyBtn:          "Participar Ahora \uD83C\uDF89",
+					legalTitle: "Reglas Oficiales y Aviso Legal",
+					legalText:
+						"NO ES NECESARIO REALIZAR UNA COMPRA PARA PARTICIPAR O GANAR. Abierto a residentes legales de los Estados Unidos mayores de 18 a\u00F1os. Per\u00EDodo del sorteo: 19\u201323 de mayo de 2025. Ganador anunciado el 24 de mayo de 2025. Un (1) ganador ser\u00E1 seleccionado aleatoriamente entre todas las participaciones elegibles. Premio: Canasta de Verano (valor aproximado al por menor ~$50). El contenido puede variar. Nulo donde est\u00E9 prohibido por ley.<br><br>Esta promoci\u00F3n no est\u00E1 de ninguna manera patrocinada, avalada, administrada ni asociada con Facebook o Instagram. Al participar, los concursantes reconocen que Meta Platforms, Inc. no asume ninguna responsabilidad ni es responsable de ning\u00FAn reclamo relacionado con esta promoci\u00F3n. Cualquier pregunta sobre este sorteo debe dirigirse a Khayfer Liquidation, no a Meta Platforms, Inc. Patrocinador: Khayfer Liquidation, Russellville, AR.",
 
-      legalTitle:         "Reglas Oficiales y Aviso Legal",
-      legalText:          "NO ES NECESARIO REALIZAR UNA COMPRA PARA PARTICIPAR O GANAR. Abierto a residentes legales de los Estados Unidos mayores de 18 a\u00F1os. Per\u00EDodo del sorteo: 19\u201323 de mayo de 2025. Ganador anunciado el 24 de mayo de 2025. Un (1) ganador ser\u00E1 seleccionado aleatoriamente entre todas las participaciones elegibles. Premio: Canasta de Verano (valor aproximado al por menor ~$50). El contenido puede variar. Nulo donde est\u00E9 prohibido por ley.<br><br>Esta promoci\u00F3n no est\u00E1 de ninguna manera patrocinada, avalada, administrada ni asociada con Facebook o Instagram. Al participar, los concursantes reconocen que Meta Platforms, Inc. no asume ninguna responsabilidad ni es responsable de ning\u00FAn reclamo relacionado con esta promoci\u00F3n. Cualquier pregunta sobre este sorteo debe dirigirse a Khayfer Liquidation, no a Meta Platforms, Inc. Patrocinador: Khayfer Liquidation, Russellville, AR.",
+					footerText:
+						"\u00A9 2025 Khayfer Liquidation \u00D7 PoncakeA&A. Todos los derechos reservados.",
 
-      footerText:         "\u00A9 2025 Khayfer Liquidation \u00D7 PoncakeA&A. Todos los derechos reservados.",
+					errName: "Por favor ingresa tu nombre completo.",
+					errEmail: "Por favor ingresa un correo electr\u00F3nico v\u00E1lido.",
+					errPhone:
+						"Por favor ingresa un n\u00FAmero de tel\u00E9fono v\u00E1lido (10 d\u00EDgitos).",
+				},
+			};
 
-      errName:            "Por favor ingresa tu nombre completo.",
-      errEmail:           "Por favor ingresa un correo electr\u00F3nico v\u00E1lido.",
-      errPhone:           "Por favor ingresa un n\u00FAmero de tel\u00E9fono v\u00E1lido (10 d\u00EDgitos)."
-    }
-
-  };
-
-  /* ==============================================================
+			/* ==============================================================
      APP STATE
   ============================================================== */
-  var currentLang   = 'en';
-  var formSubmitted = false;
+			var currentLang = "en";
+			var formSubmitted = false;
 
-  /* ==============================================================
+			/* ==============================================================
      LANGUAGE TOGGLE
   ============================================================== */
-  function toggleLanguage() {
-    currentLang = (currentLang === 'en') ? 'es' : 'en';
-    applyLanguage(currentLang);
-  }
+			function toggleLanguage() {
+				currentLang = currentLang === "en" ? "es" : "en";
+				applyLanguage(currentLang);
+			}
 
-  function applyLanguage(lang) {
-    var t = translations[lang];
+			function applyLanguage(lang) {
+				var t = translations[lang];
 
-    // Update html lang attribute for screen readers
-    document.documentElement.lang = lang;
+				// Update html lang attribute for screen readers
+				document.documentElement.lang = lang;
 
-    // Update aria-label on lang button
-    document.getElementById('lang-toggle').setAttribute(
-      'aria-label',
-      lang === 'en' ? 'Cambiar a Español' : 'Switch to English'
-    );
+				// Update aria-label on lang button
+				document
+					.getElementById("lang-toggle")
+					.setAttribute(
+						"aria-label",
+						lang === "en" ? "Cambiar a Español" : "Switch to English",
+					);
 
-    // Update all elements that have a data-key attribute
-    var keyed = document.querySelectorAll('[data-key]');
-    for (var i = 0; i < keyed.length; i++) {
-      var el  = keyed[i];
-      var key = el.getAttribute('data-key');
-      if (t[key] === undefined) continue;
+				// Update all elements that have a data-key attribute
+				var keyed = document.querySelectorAll("[data-key]");
+				for (var i = 0; i < keyed.length; i++) {
+					var el = keyed[i];
+					var key = el.getAttribute("data-key");
+					if (t[key] === undefined) continue;
 
-      // Only legalText contains HTML tags (<br>) — use innerHTML for that key
-      if (key === 'legalText') {
-        el.innerHTML = t[key];
-      } else {
-        el.textContent = t[key];
-      }
-    }
+					// Only legalText contains HTML tags (<br>) — use innerHTML for that key
+					if (key === "legalText") {
+						el.innerHTML = t[key];
+					} else {
+						el.textContent = t[key];
+					}
+				}
 
-    // Update input placeholder attributes (stored separately to avoid aria conflicts)
-    var placeholderEls = document.querySelectorAll('[data-placeholder-key]');
-    for (var j = 0; j < placeholderEls.length; j++) {
-      var pEl  = placeholderEls[j];
-      var pKey = pEl.getAttribute('data-placeholder-key');
-      if (t[pKey] !== undefined) {
-        pEl.placeholder = t[pKey];
-      }
-    }
+				// Update input placeholder attributes (stored separately to avoid aria conflicts)
+				var placeholderEls = document.querySelectorAll(
+					"[data-placeholder-key]",
+				);
+				for (var j = 0; j < placeholderEls.length; j++) {
+					var pEl = placeholderEls[j];
+					var pKey = pEl.getAttribute("data-placeholder-key");
+					if (t[pKey] !== undefined) {
+						pEl.placeholder = t[pKey];
+					}
+				}
 
-    // Re-render the prize items list (array, not a string)
-    renderPrizeItems(lang);
-  }
+				// Re-render the prize items list (array, not a string)
+				renderPrizeItems(lang);
+			}
 
-  /* ==============================================================
+			/* ==============================================================
      PRIZE ITEMS LIST — renders from the prizeItems array
   ============================================================== */
-  function renderPrizeItems(lang) {
-    var list  = document.getElementById('prize-list');
-    var items = translations[lang].prizeItems;
-    var html  = '';
-    for (var i = 0; i < items.length; i++) {
-      html += '<li>' + items[i] + '</li>';
-    }
-    list.innerHTML = html;
-  }
+			function renderPrizeItems(lang) {
+				var list = document.getElementById("prize-list");
+				var items = translations[lang].prizeItems;
+				var html = "";
+				for (var i = 0; i < items.length; i++) {
+					html += "<li>" + items[i] + "</li>";
+				}
+				list.innerHTML = html;
+			}
 
-  /* ==============================================================
+			/* ==============================================================
      FORM VALIDATION & SUBMISSION
   ============================================================== */
-  function handleSubmit(event) {
-    event.preventDefault();
-    var t     = translations[currentLang];
-    var name  = document.getElementById('field-name');
-    var email = document.getElementById('field-email');
-    var phone = document.getElementById('field-phone');
-    var valid = true;
+			function handleSubmit(event) {
+				event.preventDefault();
+				var t = translations[currentLang];
+				var name = document.getElementById("field-name");
+				var email = document.getElementById("field-email");
+				var phone = document.getElementById("field-phone");
+				var valid = true;
 
-    // Validate: name must be at least 2 non-whitespace characters
-    if (name.value.trim().length < 2) {
-      showFieldError('err-name', name, t.errName);
-      valid = false;
-    } else {
-      clearFieldError('err-name', name);
-    }
+				// Validate: name must be at least 2 non-whitespace characters
+				if (name.value.trim().length < 2) {
+					showFieldError("err-name", name, t.errName);
+					valid = false;
+				} else {
+					clearFieldError("err-name", name);
+				}
 
-    // Validate: basic email format
-    var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailPattern.test(email.value.trim())) {
-      showFieldError('err-email', email, t.errEmail);
-      valid = false;
-    } else {
-      clearFieldError('err-email', email);
-    }
+				// Validate: basic email format
+				var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+				if (!emailPattern.test(email.value.trim())) {
+					showFieldError("err-email", email, t.errEmail);
+					valid = false;
+				} else {
+					clearFieldError("err-email", email);
+				}
 
-    // Validate: phone must have at least 10 numeric digits
-    var digits = phone.value.replace(/\D/g, '');
-    if (digits.length < 10) {
-      showFieldError('err-phone', phone, t.errPhone);
-      valid = false;
-    } else {
-      clearFieldError('err-phone', phone);
-    }
+				// Validate: phone must have at least 10 numeric digits
+				var digits = phone.value.replace(/\D/g, "");
+				if (digits.length < 10) {
+					showFieldError("err-phone", phone, t.errPhone);
+					valid = false;
+				} else {
+					clearFieldError("err-phone", phone);
+				}
 
-    if (valid) {
-      submitForm();
-    }
-  }
+				if (valid) {
+					submitForm();
+				}
+			}
 
-  function showFieldError(errId, inputEl, message) {
-    var errEl       = document.getElementById(errId);
-    errEl.textContent = message;
-    errEl.classList.add('visible');
-    inputEl.classList.add('error');
-    inputEl.setAttribute('aria-invalid', 'true');
-  }
+			function showFieldError(errId, inputEl, message) {
+				var errEl = document.getElementById(errId);
+				errEl.textContent = message;
+				errEl.classList.add("visible");
+				inputEl.classList.add("error");
+				inputEl.setAttribute("aria-invalid", "true");
+			}
 
-  function clearFieldError(errId, inputEl) {
-    document.getElementById(errId).classList.remove('visible');
-    inputEl.classList.remove('error');
-    inputEl.removeAttribute('aria-invalid');
-  }
+			function clearFieldError(errId, inputEl) {
+				document.getElementById(errId).classList.remove("visible");
+				inputEl.classList.remove("error");
+				inputEl.removeAttribute("aria-invalid");
+			}
 
-  function submitForm() {
-    formSubmitted = true;
+			function submitForm() {
+				formSubmitted = true;
 
-    // Hide the form, reveal thank-you message
-    document.getElementById('entry-form-container').style.display = 'none';
-    var ty = document.getElementById('thank-you');
-    ty.classList.add('visible');
+				// Hide the form, reveal thank-you message
+				document.getElementById("entry-form-container").style.display = "none";
+				var ty = document.getElementById("thank-you");
+				ty.classList.add("visible");
 
-    // Hide sticky bar (user has entered — no longer needed)
-    document.getElementById('sticky-bar').classList.add('hidden');
+				// Hide sticky bar (user has entered — no longer needed)
+				document.getElementById("sticky-bar").classList.add("hidden");
 
-    // Smooth-scroll to thank-you message
-    ty.scrollIntoView({ behavior: 'smooth', block: 'center' });
-  }
+				// Smooth-scroll to thank-you message
+				ty.scrollIntoView({ behavior: "smooth", block: "center" });
+			}
 
-  /* ==============================================================
+			/* ==============================================================
      STICKY BAR — hide when entry form section is visible
   ============================================================== */
-  function scrollToForm() {
-    document.getElementById('entry-section').scrollIntoView({ behavior: 'smooth' });
-  }
+			function scrollToForm() {
+				document
+					.getElementById("entry-section")
+					.scrollIntoView({ behavior: "smooth" });
+			}
 
-  (function initStickyBarObserver() {
-    var stickyBar   = document.getElementById('sticky-bar');
-    var formSection = document.getElementById('entry-section');
+			(function initStickyBarObserver() {
+				var stickyBar = document.getElementById("sticky-bar");
+				var formSection = document.getElementById("entry-section");
 
-    // Use IntersectionObserver to show/hide sticky bar
-    var observer = new IntersectionObserver(function(entries) {
-      entries.forEach(function(entry) {
-        if (entry.isIntersecting || formSubmitted) {
-          stickyBar.classList.add('hidden');
-        } else {
-          stickyBar.classList.remove('hidden');
-        }
-      });
-    }, { threshold: 0.15 });
+				// Use IntersectionObserver to show/hide sticky bar
+				var observer = new IntersectionObserver(
+					function (entries) {
+						entries.forEach(function (entry) {
+							if (entry.isIntersecting || formSubmitted) {
+								stickyBar.classList.add("hidden");
+							} else {
+								stickyBar.classList.remove("hidden");
+							}
+						});
+					},
+					{ threshold: 0.15 },
+				);
 
-    observer.observe(formSection);
-  })();
+				observer.observe(formSection);
+			})();
 
-  /* ==============================================================
+			/* ==============================================================
      INIT — render prize items on first load (English default)
   ============================================================== */
-  (function init() {
-    renderPrizeItems('en');
-  })();
-
-</script>
-</body>
+			(function init() {
+				renderPrizeItems("en");
+			})();
+		</script>
+	</body>
 </html>
