@@ -478,153 +478,7 @@
 			}
 
 			/* ============================================================
-       ENTRY FORM
-    ============================================================ */
-			.form-section {
-				background: linear-gradient(180deg, #ffeedd 0%, var(--cream) 100%);
-			}
-
-			#entry-form-container {
-				background: #fff;
-				border-radius: var(--radius-lg);
-				border: 2px solid var(--border);
-				padding: 24px 20px;
-				box-shadow: 0 6px 24px var(--shadow);
-			}
-
-			.form-group {
-				margin-bottom: 18px;
-			}
-
-			.form-group label {
-				display: block;
-				font-weight: 700;
-				font-size: 0.9rem;
-				color: var(--dark);
-				margin-bottom: 7px;
-			}
-
-			/* Font size 16px prevents iOS auto-zoom on focus */
-			.form-group input[type="text"],
-			.form-group input[type="email"],
-			.form-group input[type="tel"] {
-				width: 100%;
-				padding: 14px 16px;
-				border: 2px solid var(--border);
-				border-radius: var(--radius-sm);
-				font-family: "Nunito", sans-serif;
-				font-size: 16px;
-				color: var(--dark);
-				background: var(--cream);
-				transition:
-					border-color 0.2s,
-					box-shadow 0.2s,
-					background 0.2s;
-				-webkit-appearance: none;
-				appearance: none;
-			}
-
-			.form-group input:focus {
-				outline: none;
-				border-color: var(--coral);
-				box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.18);
-				background: #fff;
-			}
-
-			.form-group input.error {
-				border-color: #e53e3e;
-				box-shadow: 0 0 0 3px rgba(229, 62, 62, 0.15);
-			}
-
-			.error-msg {
-				display: none;
-				color: #e53e3e;
-				font-size: 12px;
-				font-weight: 700;
-				margin-top: 5px;
-			}
-
-			.error-msg.visible {
-				display: block;
-			}
-
-			.submit-btn {
-				width: 100%;
-				padding: 16px;
-				background: linear-gradient(135deg, var(--coral), var(--orange));
-				color: #fff;
-				border: none;
-				border-radius: 14px;
-				font-family: "Fredoka One", cursive;
-				font-size: 1.25rem;
-				cursor: pointer;
-				min-height: 58px; /* Large tap target */
-				box-shadow: 0 4px 18px rgba(255, 107, 53, 0.45);
-				transition:
-					transform 0.15s,
-					box-shadow 0.15s;
-				-webkit-appearance: none;
-				appearance: none;
-				-webkit-tap-highlight-color: transparent;
-			}
-
-			.submit-btn:hover,
-			.submit-btn:focus {
-				transform: translateY(-2px);
-				box-shadow: 0 8px 28px rgba(255, 107, 53, 0.55);
-				outline: none;
-			}
-
-			.submit-btn:active {
-				transform: translateY(0);
-			}
-
-			/* Thank-you confirmation shown after submit */
-			#thank-you {
-				display: none;
-				text-align: center;
-				padding: 36px 20px;
-				background: #fff;
-				border-radius: var(--radius-lg);
-				border: 2px solid var(--border);
-				box-shadow: 0 6px 24px var(--shadow);
-			}
-
-			#thank-you.visible {
-				display: block;
-			}
-
-			.thank-you-emoji {
-				font-size: 3.8rem;
-				display: block;
-				margin-bottom: 14px;
-				animation: bounceAnim 0.7s ease-in-out infinite alternate;
-			}
-
-			@keyframes bounceAnim {
-				from {
-					transform: translateY(0);
-				}
-				to {
-					transform: translateY(-12px);
-				}
-			}
-
-			#thank-you h2 {
-				font-family: "Fredoka One", cursive;
-				font-size: 1.65rem;
-				color: var(--coral);
-				margin-bottom: 12px;
-			}
-
-			#thank-you p {
-				color: var(--gray);
-				font-size: 0.95rem;
-				line-height: 1.65;
-			}
-
-			/* ============================================================
-       GLEAM BONUS ENTRIES WIDGET
+       GLEAM ENTRIES WIDGET
     ============================================================ */
 			#gleam-bonus {
 				background: linear-gradient(180deg, var(--cream) 0%, #fff0dd 100%);
@@ -836,7 +690,7 @@
 					<div class="step-card">
 						<div class="step-number" aria-hidden="true">3</div>
 						<div class="step-content">
-							<h3 data-key="step3Title">Fill Out the Form ✍️</h3>
+							<h3 data-key="step3Title">Enter via Gleam Widget 🎉</h3>
 							<p data-key="step3Desc">
 								Enter your name, phone number, and email address below.
 							</p>
@@ -977,122 +831,12 @@
 			</section>
 
 			<!-- =====================================================
-       ENTRY FORM
-  ====================================================== -->
-			<section
-				class="form-section"
-				id="entry-section"
-				aria-labelledby="form-heading"
-			>
-				<h2 class="section-title" id="form-heading" data-key="formTitle">
-					Enter the Giveaway
-				</h2>
-
-				<!-- Form card -->
-				<div id="entry-form-container">
-					<form id="entry-form" novalidate onsubmit="handleSubmit(event)">
-						<!-- Name -->
-						<div class="form-group">
-							<label for="field-name" data-key="formNameLabel">Full Name</label>
-							<input
-								type="text"
-								id="field-name"
-								name="name"
-								autocomplete="name"
-								placeholder="Your full name"
-								data-placeholder-key="formNamePlaceholder"
-								required
-								aria-required="true"
-								aria-describedby="err-name"
-							/>
-							<span
-								class="error-msg"
-								id="err-name"
-								role="alert"
-								data-key="errName"
-							>
-								Please enter your full name.
-							</span>
-						</div>
-
-						<!-- Email -->
-						<div class="form-group">
-							<label for="field-email" data-key="formEmailLabel"
-								>Email Address</label
-							>
-							<input
-								type="email"
-								id="field-email"
-								name="email"
-								autocomplete="email"
-								placeholder="your@email.com"
-								data-placeholder-key="formEmailPlaceholder"
-								required
-								aria-required="true"
-								aria-describedby="err-email"
-							/>
-							<span
-								class="error-msg"
-								id="err-email"
-								role="alert"
-								data-key="errEmail"
-							>
-								Please enter a valid email address.
-							</span>
-						</div>
-
-						<!-- Phone -->
-						<div class="form-group">
-							<label for="field-phone" data-key="formPhoneLabel"
-								>Phone Number</label
-							>
-							<input
-								type="tel"
-								id="field-phone"
-								name="phone"
-								autocomplete="tel"
-								placeholder="(555) 555-5555"
-								data-placeholder-key="formPhonePlaceholder"
-								required
-								aria-required="true"
-								aria-describedby="err-phone"
-							/>
-							<span
-								class="error-msg"
-								id="err-phone"
-								role="alert"
-								data-key="errPhone"
-							>
-								Please enter a valid phone number (10 digits).
-							</span>
-						</div>
-
-						<button type="submit" class="submit-btn" data-key="submitBtn">
-							Submit My Entry! 🎉
-						</button>
-					</form>
-				</div>
-				<!-- /#entry-form-container -->
-
-				<!-- Thank-you message — hidden until form is submitted -->
-				<div id="thank-you" role="status" aria-live="polite">
-					<span class="thank-you-emoji" aria-hidden="true">🎊</span>
-					<h2 data-key="thankYouTitle">You're Entered!</h2>
-					<p data-key="thankYouMsg">
-						Thank you for entering! Good luck — the winner will be announced on
-						May 24, 2025. Make sure you follow @KhayferLiquidation so you don't
-						miss the announcement!
-					</p>
-				</div>
-			</section>
-
-			<!-- =====================================================
-       GLEAM BONUS ENTRIES WIDGET
+       GLEAM ENTRIES WIDGET
        The <script> tag is intentionally placed here (once only).
   ====================================================== -->
 			<section id="gleam-bonus" aria-labelledby="gleam-heading">
 				<h2 class="section-title" id="gleam-heading" data-key="gleamTitle">
-					🎁 Earn More Entries!
+					🎁 Enter the Giveaway!
 				</h2>
 				<div class="gleam-card">
 					<p class="gleam-desc" data-key="gleamDesc">
@@ -1200,8 +944,8 @@
 					step2Title: "Scan the QR Code \uD83D\uDCF1",
 					step2Desc:
 						"Find the QR code on your pastry container and give it a scan.",
-					step3Title: "Fill Out the Form \u270D\uFE0F",
-					step3Desc: "Enter your name, phone number, and email address below.",
+					step3Title: "Enter via Gleam Widget \uD83C\uDF89",
+					step3Desc: "Complete the entry widget below to enter the giveaway.",
 					step4Title: "Bonus Entries! \uD83C\uDF1F",
 					step4Desc:
 						"Follow @KhayferLiquidation on Facebook and/or Instagram for additional entries.",
@@ -1235,24 +979,11 @@
 					khayferFBBtn: "\uD83D\uDCD8 Follow on Facebook",
 					khayferIGBtn: "\uD83D\uDCF7 Follow on Instagram",
 
-					formTitle: "Enter the Giveaway",
-					formNameLabel: "Full Name",
-					formNamePlaceholder: "Your full name",
-					formEmailLabel: "Email Address",
-					formEmailPlaceholder: "your@email.com",
-					formPhoneLabel: "Phone Number",
-					formPhonePlaceholder: "(555) 555-5555",
-					submitBtn: "Submit My Entry! \uD83C\uDF89",
-
-					thankYouTitle: "You\u2019re Entered! \uD83C\uDF8A",
-					thankYouMsg:
-						"Thank you for entering! Good luck \u2014 the winner will be announced on May 24, 2025. Make sure you follow @KhayferLiquidation so you don\u2019t miss the announcement!",
-
 					stickyBtn: "Enter Now \uD83C\uDF89",
 
-					gleamTitle: "\uD83C\uDF81 Earn More Entries!",
+					gleamTitle: "\uD83C\uDF81 Enter the Giveaway!",
 					gleamDesc:
-						"Complete bonus actions below for extra chances to win the Summer Gift Basket!",
+						"Complete the actions below to enter and earn extra chances to win the Summer Gift Basket!",
 
 					legalTitle: "Official Rules & Disclaimer",
 					legalText:
@@ -1261,9 +992,7 @@
 					footerText:
 						"\u00A9 2025 Khayfer Liquidation \u00D7 PoncakeA&A. All rights reserved.",
 
-					errName: "Please enter your full name.",
-					errEmail: "Please enter a valid email address.",
-					errPhone: "Please enter a valid phone number (10 digits).",
+
 				},
 
 				es: {
@@ -1282,9 +1011,9 @@
 					step2Title: "Escanea el C\u00F3digo QR \uD83D\uDCF1",
 					step2Desc:
 						"Encuentra el c\u00F3digo QR en tu recipiente del pastel y esc\u00E1nealo.",
-					step3Title: "Llena el Formulario \u270D\uFE0F",
+					step3Title: "Participa con el Widget \uD83C\uDF89",
 					step3Desc:
-						"Ingresa tu nombre, n\u00FAmero de tel\u00E9fono y correo electr\u00F3nico abajo.",
+						"Completa el widget de participaci\u00F3n para ingresar al sorteo.",
 					step4Title: "\u00A1Entradas Adicionales! \uD83C\uDF1F",
 					step4Desc:
 						"Sigue a @KhayferLiquidation en Facebook y/o Instagram para entradas adicionales.",
@@ -1318,24 +1047,11 @@
 					khayferFBBtn: "\uD83D\uDCD8 Seguir en Facebook",
 					khayferIGBtn: "\uD83D\uDCF7 Seguir en Instagram",
 
-					formTitle: "Participa en el Sorteo",
-					formNameLabel: "Nombre Completo",
-					formNamePlaceholder: "Tu nombre completo",
-					formEmailLabel: "Correo Electr\u00F3nico",
-					formEmailPlaceholder: "tu@correo.com",
-					formPhoneLabel: "N\u00FAmero de Tel\u00E9fono",
-					formPhonePlaceholder: "(555) 555-5555",
-					submitBtn: "\u00A1Enviar mi Participaci\u00F3n! \uD83C\uDF89",
-
-					thankYouTitle: "\u00A1Ya Est\u00E1s Participando! \uD83C\uDF8A",
-					thankYouMsg:
-						"\u00A1Gracias por participar! Buena suerte \u2014 el ganador ser\u00E1 anunciado el 24 de mayo de 2025. \u00A1Aseg\u00FArate de seguir a @KhayferLiquidation para no perderte el anuncio!",
-
 					stickyBtn: "Participar Ahora \uD83C\uDF89",
 
-					gleamTitle: "\uD83C\uDF81 \u00A1Gana M\u00E1s Participaciones!",
+					gleamTitle: "\uD83C\uDF81 \u00A1Participa en el Sorteo!",
 					gleamDesc:
-						"\u00A1Completa las acciones adicionales para tener m\u00E1s oportunidades de ganar la Canasta de Verano!",
+						"\u00A1Completa las acciones para participar y ganar m\u00E1s oportunidades de ganar la Canasta de Verano!",
 
 					legalTitle: "Reglas Oficiales y Aviso Legal",
 					legalText:
@@ -1344,10 +1060,7 @@
 					footerText:
 						"\u00A9 2025 Khayfer Liquidation \u00D7 PoncakeA&A. Todos los derechos reservados.",
 
-					errName: "Por favor ingresa tu nombre completo.",
-					errEmail: "Por favor ingresa un correo electr\u00F3nico v\u00E1lido.",
-					errPhone:
-						"Por favor ingresa un n\u00FAmero de tel\u00E9fono v\u00E1lido (10 d\u00EDgitos).",
+
 				},
 			};
 
@@ -1355,7 +1068,6 @@
      APP STATE
   ============================================================== */
 			var currentLang = "en";
-			var formSubmitted = false;
 
 			/* ==============================================================
      LANGUAGE TOGGLE
@@ -1424,94 +1136,23 @@
 			}
 
 			/* ==============================================================
-     FORM VALIDATION & SUBMISSION
-  ============================================================== */
-			function handleSubmit(event) {
-				event.preventDefault();
-				var t = translations[currentLang];
-				var name = document.getElementById("field-name");
-				var email = document.getElementById("field-email");
-				var phone = document.getElementById("field-phone");
-				var valid = true;
-
-				// Validate: name must be at least 2 non-whitespace characters
-				if (name.value.trim().length < 2) {
-					showFieldError("err-name", name, t.errName);
-					valid = false;
-				} else {
-					clearFieldError("err-name", name);
-				}
-
-				// Validate: basic email format
-				var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-				if (!emailPattern.test(email.value.trim())) {
-					showFieldError("err-email", email, t.errEmail);
-					valid = false;
-				} else {
-					clearFieldError("err-email", email);
-				}
-
-				// Validate: phone must have at least 10 numeric digits
-				var digits = phone.value.replace(/\D/g, "");
-				if (digits.length < 10) {
-					showFieldError("err-phone", phone, t.errPhone);
-					valid = false;
-				} else {
-					clearFieldError("err-phone", phone);
-				}
-
-				if (valid) {
-					submitForm();
-				}
-			}
-
-			function showFieldError(errId, inputEl, message) {
-				var errEl = document.getElementById(errId);
-				errEl.textContent = message;
-				errEl.classList.add("visible");
-				inputEl.classList.add("error");
-				inputEl.setAttribute("aria-invalid", "true");
-			}
-
-			function clearFieldError(errId, inputEl) {
-				document.getElementById(errId).classList.remove("visible");
-				inputEl.classList.remove("error");
-				inputEl.removeAttribute("aria-invalid");
-			}
-
-			function submitForm() {
-				formSubmitted = true;
-
-				// Hide the form, reveal thank-you message
-				document.getElementById("entry-form-container").style.display = "none";
-				var ty = document.getElementById("thank-you");
-				ty.classList.add("visible");
-
-				// Hide sticky bar (user has entered — no longer needed)
-				document.getElementById("sticky-bar").classList.add("hidden");
-
-				// Smooth-scroll to thank-you message
-				ty.scrollIntoView({ behavior: "smooth", block: "center" });
-			}
-
-			/* ==============================================================
-     STICKY BAR — hide when entry form section is visible
+     STICKY BAR — hide when Gleam section is visible
   ============================================================== */
 			function scrollToForm() {
 				document
-					.getElementById("entry-section")
+					.getElementById("gleam-bonus")
 					.scrollIntoView({ behavior: "smooth" });
 			}
 
 			(function initStickyBarObserver() {
 				var stickyBar = document.getElementById("sticky-bar");
-				var formSection = document.getElementById("entry-section");
+				var gleamSection = document.getElementById("gleam-bonus");
 
 				// Use IntersectionObserver to show/hide sticky bar
 				var observer = new IntersectionObserver(
 					function (entries) {
 						entries.forEach(function (entry) {
-							if (entry.isIntersecting || formSubmitted) {
+							if (entry.isIntersecting) {
 								stickyBar.classList.add("hidden");
 							} else {
 								stickyBar.classList.remove("hidden");
@@ -1521,7 +1162,7 @@
 					{ threshold: 0.15 },
 				);
 
-				observer.observe(formSection);
+				observer.observe(gleamSection);
 			})();
 
 			/* ==============================================================
