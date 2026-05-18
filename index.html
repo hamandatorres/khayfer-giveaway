@@ -482,22 +482,23 @@
     ============================================================ */
 			#gleam-bonus {
 				background: linear-gradient(180deg, var(--cream) 0%, #fff0dd 100%);
-				padding: 32px 20px;
+				padding: 32px 6px;
 			}
 
 			.gleam-card {
 				background: #fff;
 				border: 2px solid var(--border);
 				border-radius: var(--radius-lg);
-				padding: 24px 20px;
+				padding: 24px 6px;
 				box-shadow: 0 6px 24px var(--shadow);
-				overflow-x: clip;
 			}
 
-			/* Force Gleam's injected iframe to stay within its container */
-			#gleam-bonus iframe {
+			/* Force Gleam's injected elements to stay within their container */
+			.gleam-card .e-widget-preloader,
+			.gleam-card iframe.e-embed-frame {
 				max-width: 100% !important;
 				width: 100% !important;
+				display: block;
 			}
 
 			.gleam-desc {
@@ -507,6 +508,7 @@
 				margin-bottom: 20px;
 				line-height: 1.55;
 				font-weight: 600;
+				padding: 0 14px;
 			}
 
 			/* ============================================================
