@@ -1,0 +1,460 @@
+================================================================================
+  KHAYFER GIVEAWAY — AGENT CONTEXT DOCUMENT
+  Last updated: May 18, 2026
+  Repository: https://github.com/hamandatorres/khayfer-giveaway
+  Branch: main
+================================================================================
+
+────────────────────────────────────────────────────────────────────────────────
+  PROJECT OVERVIEW
+────────────────────────────────────────────────────────────────────────────────
+
+A mobile-first, single-page giveaway landing page for a collaboration between
+Khayfer Liquidation and PoncakeA&A. Users scan a QR code on a purchased pastry
+container, land on this page, and enter the giveaway via an embedded Gleam.io
+widget. The page is fully bilingual (English / Spanish), toggled in-page with
+no page reload. It is a static HTML file with no build tools, no frameworks,
+and no backend — deployed via GitHub Pages.
+
+Giveaway details:
+  - Prize: Summer Gift Basket (~$50 retail value)
+  - Entry period: May 19–23, 2025
+  - Winner announced: May 24, 2025
+  - Sponsor: Khayfer Liquidation, Russellville, AR
+  - Entry method: Gleam.io widget (https://gleam.io/TJ05k/poncakeaa-khayfer-summer-giveaway)
+
+Partners:
+  - PoncakeA&A          — pastry maker, giveaway co-host
+  - Dreami Tea          — in-person pickup location (Russellville, AR)
+  - Khayfer Liquidation — giveaway host and prize sponsor
+
+
+────────────────────────────────────────────────────────────────────────────────
+  FILE MAP
+────────────────────────────────────────────────────────────────────────────────
+
+  index.html   — The entire deployable project. All HTML, CSS, and JS in one
+                 file. No external assets except Google Fonts CDN and the
+                 Gleam.io widget script. This is the only file that matters
+                 for the live page.
+
+  README.md    — GitHub repo documentation. Describes the project, lists
+                 features, and explains how to deploy via GitHub Pages.
+                 May reference old URL placeholders that have since been
+                 replaced with real URLs in index.html.
+
+  context.txt  — This file. Agent/human context document describing the full
+                 project structure, conventions, and current state.
+
+  claude.txt   — User-created reference file containing the real social media
+                 URLs. Not part of the deployable project; read-only reference.
+                 Contents:
+                   PoncakeA&A FB: https://www.facebook.com/PoncakeAA/
+                   Dreami Tea FB: https://www.facebook.com/dreamitea/
+                   Khayfer FB:   https://www.facebook.com/khayfer
+                   Khayfer IG:   https://www.instagram.com/khayferliquidation/
+
+
+────────────────────────────────────────────────────────────────────────────────
+  INDEX.HTML — DOCUMENT STRUCTURE
+────────────────────────────────────────────────────────────────────────────────
+
+The file is organized in this order:
+
+  <head>
+    ├── Meta tags (charset, viewport, theme-color, description)
+    ├── <title>
+    ├── Google Fonts CDN links (Fredoka One + Nunito)
+    └── <style> — ALL CSS (see CSS section below)
+
+  <body>
+    └── div.page-wrapper                  — max-width 480px, centered
+        ├── div.lang-bar                  — sticky language toggle bar
+        ├── header.site-header            — coral gradient, collab badge, h1
+        ├── section.hero                  — dates pill + tagline
+        ├── section.steps-section         — "How to Enter" (3 step cards)
+        ├── section.prize-section         — prize basket card + items grid
+        ├── section.partners-section      — 3 partner business cards
+        ├── section#gleam-bonus           — Gleam.io entry widget
+        ├── section.legal-section         — official rules / disclaimer
+        └── footer.site-footer            — copyright line
+
+    div#sticky-bar (outside .page-wrapper)
+        └── button.sticky-enter-btn       — "Enter Now" CTA, hides on scroll
+
+    <script>                              — ALL JavaScript (see JS section below)
+
+
+────────────────────────────────────────────────────────────────────────────────
+  HTML SECTIONS — DETAILED DESCRIPTIONS
+────────────────────────────────────────────────────────────────────────────────
+
+  div.lang-bar
+    Purpose: Sticky bar at the very top. Contains one button (#lang-toggle)
+             that toggles between EN and ES with onclick="toggleLanguage()".
+    Behavior: Stays fixed at top: 0; z-index: 100.
+    Key attribute: aria-label on the button updates dynamically per language.
+
+  header.site-header
+    Purpose: Main hero header with coral-to-peach gradient background.
+    Contains: Collab badge (data-key="headerTagline"), emoji, h1 (data-key="headerTitle").
+    Decorative: ::before (☀️ emoji, opacity 0.2) and ::after (🌊 emoji) via CSS.
+
+  section.hero
+    Purpose: Giveaway dates band.
+    Contains: .dates-badge with .dates-main (data-key="heroDates") and
+              .dates-announce (data-key="heroAnnounce"), plus .hero-tagline
+              (data-key="heroTagline").
+
+  section.steps-section  [id="how-to-enter"]
+    Purpose: "How to Enter" — 3 numbered step cards.
+    Structure: .steps-list > .step-card (×3)
+               Each .step-card has .step-number (1/2/3) and .step-content (h3 + p).
+    Current steps:
+      1. Buy a Pastry          (data-key: step1Title / step1Desc)
+      2. Scan the QR Code      (data-key: step2Title / step2Desc)
+      3. Enter via Gleam Widget (data-key: step3Title / step3Desc)
+    NOTE: Was 4 steps historically. Step 4 ("Bonus Entries") was removed.
+
+  section.prize-section
+    Purpose: Prize display — Summer Gift Basket.
+    Structure: .prize-basket > .prize-header (gradient, emoji, h3, value badge)
+               + #prize-list (ul, rendered by JS renderPrizeItems())
+    NOTE: The prize items list is populated by JavaScript on load and on each
+          language toggle. Do NOT add <li> items directly to #prize-list in HTML.
+          Edit the prizeItems array in the translations object instead.
+
+  section.partners-section
+    Purpose: Three partner business cards.
+    Structure: .partner-cards > .partner-card (×3)
+               Each has: .partner-card-header (.partner-icon + h3), <p>, .partner-links
+    Partners and their social links:
+      PoncakeA&A:
+        - FB: https://www.facebook.com/PoncakeAA/    (.social-btn.facebook)
+      Dreami Tea:
+        - FB: https://www.facebook.com/dreamitea/    (.social-btn.facebook)
+      Khayfer Liquidation:
+        - FB: https://www.facebook.com/khayfer       (.social-btn.facebook)
+        - IG: https://www.instagram.com/khayferliquidation/  (.social-btn.instagram)
+    Partner icon colors:
+      .partner-icon.poncake  — yellow-to-orange gradient
+      .partner-icon.dreami   — green gradient
+      .partner-icon.khayfer  — coral-to-red gradient
+
+  section#gleam-bonus  [aria-labelledby="gleam-heading"]
+    Purpose: Primary giveaway entry section — Gleam.io widget embed.
+    Contains: h2 (data-key="gleamTitle"), .gleam-card > p.gleam-desc
+              (data-key="gleamDesc"), Gleam <a> embed, Gleam <script>.
+    IMPORTANT: The Gleam <script src="https://widget.gleamjs.io/e.js"> tag
+               appears EXACTLY ONCE on the page, here. Do not add it elsewhere.
+    Gleam widget URL: https://gleam.io/TJ05k/poncakeaa-khayfer-summer-giveaway
+    Sticky bar CTA ("Enter Now") scrolls to this section via scrollToForm().
+    Sticky bar hides when this section is ≥15% visible (IntersectionObserver).
+
+  section.legal-section
+    Purpose: Official rules and Meta disclaimer (legally required).
+    Contains: h2.legal-title (data-key="legalTitle") and #legal-text
+              (data-key="legalText"). legalText uses innerHTML (not textContent)
+              because it contains <br> tags.
+
+  footer.site-footer
+    Contains: Copyright line (data-key="footerText").
+
+  div#sticky-bar  [class="sticky-bar"]
+    Purpose: Fixed bottom CTA bar. Shows when Gleam section is NOT visible.
+    Behavior: Hidden via .hidden class which applies translateY(110%).
+              Auto-hides when #gleam-bonus scrolls into view (threshold 0.15).
+    Contains: button.sticky-enter-btn (data-key="stickyBtn", onclick="scrollToForm()").
+
+
+────────────────────────────────────────────────────────────────────────────────
+  CSS ARCHITECTURE
+────────────────────────────────────────────────────────────────────────────────
+
+All CSS is in a single <style> block inside <head>. Sections in order:
+
+  1. RESET & CSS CUSTOM PROPERTIES
+     Custom properties on :root:
+       --coral: #ff6b35       (primary brand color)
+       --orange: #ff8c42
+       --yellow: #ffd166
+       --peach: #ffb347
+       --cream: #fff5ec       (page background)
+       --warm-white: #fffbf7  (content background)
+       --dark: #2d2d2d        (text color)
+       --gray: #666666        (secondary text)
+       --light-gray: #f5f5f5
+       --border: #ffd9b3      (warm border color)
+       --shadow: rgba(255,107,53,0.15)
+       --radius-sm: 10px
+       --radius: 16px
+       --radius-lg: 24px
+
+  2. PAGE WRAPPER
+     .page-wrapper: max-width 480px, centered, overflow-x hidden.
+     padding-bottom: 90px (clearance for sticky bar).
+     At min-width 481px: adds side box-shadow and border to simulate mobile.
+
+  3. LANGUAGE TOGGLE BAR  (.lang-bar, #lang-toggle)
+
+  4. SITE HEADER  (.site-header, .collab-badge, .header-emoji)
+
+  5. HERO / DATES BAND  (.hero, .dates-badge, .dates-main, .dates-announce, .hero-tagline)
+
+  6. SHARED SECTION STYLES  (section, .section-title)
+
+  7. HOW TO ENTER — STEPS  (.steps-section, .steps-list, .step-card,
+                             .step-number, .step-content)
+
+  8. PRIZE SECTION  (.prize-section, .prize-basket, .prize-header,
+                     .prize-emoji-large, .prize-value-badge, #prize-list)
+     #prize-list uses CSS grid: 2 columns. Falls back to 1 column at max-width 360px.
+
+  9. PARTNERS SECTION  (.partners-section, .partner-cards, .partner-card,
+                        .partner-card-header, .partner-icon, .partner-links,
+                        .social-btn, .social-btn.facebook, .social-btn.instagram)
+     .partner-links uses justify-content: center (buttons centered).
+     .social-btn has min-height: 48px (accessibility tap target).
+
+  10. GLEAM ENTRIES WIDGET  (#gleam-bonus, .gleam-card, .gleam-desc)
+
+  11. LEGAL DISCLAIMER  (.legal-section, .legal-title, #legal-text)
+
+  12. FOOTER  (.site-footer)
+
+  13. STICKY BOTTOM BAR  (.sticky-bar, .sticky-bar.hidden, .sticky-enter-btn)
+      Vendor prefix order (intentional):
+        -webkit-backdrop-filter comes BEFORE backdrop-filter.
+      .hidden transitions with translateX(-50%) translateY(110%) to slide out.
+
+  14. SMALL SCREEN TWEAKS  (@media max-width: 360px)
+
+
+────────────────────────────────────────────────────────────────────────────────
+  JAVASCRIPT ARCHITECTURE
+────────────────────────────────────────────────────────────────────────────────
+
+All JS is in a single <script> block before </body>. No modules, no imports.
+Uses var throughout (ES5-compatible). Sections in order:
+
+  1. TRANSLATIONS OBJECT  (const translations)
+     Top-level keys: "en" and "es"
+     Each language object contains all UI strings.
+     See "TRANSLATION KEY INVENTORY" section below for full key list.
+
+  2. APP STATE
+     var currentLang = "en"   — tracks active language ("en" or "es")
+
+  3. LANGUAGE TOGGLE
+     toggleLanguage()          — flips currentLang, calls applyLanguage()
+     applyLanguage(lang)       — walks all [data-key] elements and sets
+                                 textContent (or innerHTML for "legalText").
+                                 Also updates [data-placeholder-key] elements'
+                                 placeholder attribute. Calls renderPrizeItems().
+
+  4. PRIZE ITEMS LIST
+     renderPrizeItems(lang)    — reads translations[lang].prizeItems array,
+                                 builds <li> HTML string, sets #prize-list.innerHTML.
+                                 Called on init and on every language toggle.
+
+  5. STICKY BAR
+     scrollToForm()            — scrollIntoView({behavior:"smooth"}) on #gleam-bonus.
+                                 Called by sticky bar button onclick.
+     initStickyBarObserver()   — IIFE. Creates IntersectionObserver watching
+                                 #gleam-bonus (threshold: 0.15). Adds/removes
+                                 .hidden class on #sticky-bar.
+
+  6. INIT
+     init()                    — IIFE. Calls renderPrizeItems("en") on first load.
+
+
+────────────────────────────────────────────────────────────────────────────────
+  TRANSLATION KEY INVENTORY
+────────────────────────────────────────────────────────────────────────────────
+
+All keys exist in BOTH "en" and "es" objects unless noted.
+Keys used by applyLanguage() via [data-key] attributes:
+
+  LANGUAGE TOGGLE
+    langBtn           — button text ("Español" in EN, "English" in ES)
+
+  HEADER
+    headerTagline     — collab badge text
+    headerTitle       — h1 giveaway title
+
+  HERO
+    heroDates         — date range pill
+    heroAnnounce      — "Winner announced" subtext
+    heroTagline       — tagline paragraph
+
+  STEPS
+    stepsTitle        — section heading
+    step1Title / step1Desc
+    step2Title / step2Desc
+    step3Title / step3Desc
+
+  PRIZE
+    prizeTitle        — section heading
+    prizeSubtitle     — basket card title
+    prizeValue        — value badge text
+    prizeItems        — STRING ARRAY (not a plain string). Used by
+                        renderPrizeItems(), NOT by the [data-key] loop.
+                        Contains 8 items.
+
+  PARTNERS
+    partnersTitle
+    poncakeTitle / poncakeDesc / poncakeFBBtn
+    dreamiTitle  / dreamiDesc  / dreamiFBBtn
+    khayferTitle / khayferDesc / khayferFBBtn / khayferIGBtn
+
+  STICKY BAR
+    stickyBtn         — CTA button text
+
+  GLEAM SECTION
+    gleamTitle        — section heading
+    gleamDesc         — descriptor paragraph above the widget
+
+  LEGAL
+    legalTitle        — small heading
+    legalText         — full disclaimer. Uses innerHTML (contains <br> tags).
+
+  FOOTER
+    footerText        — copyright line
+
+INTENTIONALLY ABSENT (removed in previous sessions):
+  - formTitle, formNameLabel, formNamePlaceholder, formEmailLabel,
+    formEmailPlaceholder, formPhoneLabel, formPhonePlaceholder, submitBtn,
+    thankYouTitle, thankYouMsg, errName, errEmail, errPhone
+    (The custom entry form was removed. Gleam is now the sole entry method.)
+  - bonusTitle, bonusFB, bonusIG
+    (Bonus entry checkboxes removed. Gleam free tier does not support them.)
+  - step4Title, step4Desc
+    (Step 4 "Bonus Entries" card removed along with the checkboxes.)
+
+
+────────────────────────────────────────────────────────────────────────────────
+  SOCIAL MEDIA URLs (current, live values in index.html)
+────────────────────────────────────────────────────────────────────────────────
+
+  PoncakeA&A Facebook:          https://www.facebook.com/PoncakeAA/
+  Dreami Tea Facebook:          https://www.facebook.com/dreamitea/
+  Khayfer Liquidation Facebook: https://www.facebook.com/khayfer
+  Khayfer Liquidation Instagram: https://www.instagram.com/khayferliquidation/
+
+  To update a URL: find the matching <a href="..."> in the HTML partners section
+  and replace the href value. The social button text is controlled via data-key,
+  not the href.
+
+
+────────────────────────────────────────────────────────────────────────────────
+  GLEAM WIDGET
+────────────────────────────────────────────────────────────────────────────────
+
+  Embed type: Standard Gleam <a class="e-widget no-button"> + external script.
+  Widget URL: https://gleam.io/TJ05k/poncakeaa-khayfer-summer-giveaway
+  Script src: https://widget.gleamjs.io/e.js  (async, appears once on page)
+  Plan: Free tier — does NOT support bonus/extra entry actions.
+
+  The <script> tag must appear exactly once. It is placed inside section#gleam-bonus.
+  Do not move it or duplicate it. The widget renders by replacing the <a> tag.
+
+
+────────────────────────────────────────────────────────────────────────────────
+  KNOWN ISSUES & INTENTIONAL DECISIONS
+────────────────────────────────────────────────────────────────────────────────
+
+  1. meta[name=theme-color] Firefox warning
+     VS Code (and linters) flag this as unsupported in Firefox/Opera. It is
+     intentionally kept because the primary audience scans a QR code on mobile,
+     where Chrome (Android) and Safari (iOS) both support it. The warning is
+     cosmetic and does not affect functionality.
+
+  2. No backend / no data collection
+     The page collects no user data. Gleam.io handles all entry collection
+     through their platform. There is no server, database, or API call.
+
+  3. Single-file architecture
+     All HTML, CSS, and JS are in index.html by design — simplicity,
+     zero build step, zero dependencies, easy GitHub Pages deployment.
+
+  4. Vendor prefix order in .sticky-bar
+     -webkit-backdrop-filter appears BEFORE backdrop-filter. This is correct
+     and intentional per CSS best practices (vendor prefix first).
+
+  5. font-size: 16px on inputs
+     There are no form inputs currently (the custom form was removed), but if
+     inputs are ever re-added, use font-size: 16px to prevent iOS Safari from
+     auto-zooming on focus.
+
+  6. legalText uses innerHTML
+     All other data-key values use textContent for XSS safety. legalText is
+     the only exception because it intentionally contains <br> tags. The value
+     is hardcoded in the translations object (not user input), so this is safe.
+
+  7. Gleam.io widget: the hardcoded desc text in HTML
+     The .gleam-desc paragraph inside .gleam-card still contains the old
+     fallback text "Complete bonus actions below for extra chances to win the
+     Summer Gift Basket!" in the raw HTML. This text is immediately overwritten
+     by applyLanguage("en") on init (via data-key="gleamDesc"), so it is never
+     visible to users. The live text shown is from the translations object.
+
+
+────────────────────────────────────────────────────────────────────────────────
+  GIT / GITHUB
+────────────────────────────────────────────────────────────────────────────────
+
+  Repository URL: https://github.com/hamandatorres/khayfer-giveaway
+  Owner:          hamandatorres
+  Default branch: main
+  Auth method:    GitHub CLI (gh), authenticated as hamandatorres
+
+  Deployment: GitHub Pages (served from main branch, root directory).
+  To deploy: push index.html to main. No build step required.
+
+  Recent commit history (newest first):
+    1724b79  remove: bonus/extra entries messaging (not supported on free Gleam tier)
+    21798f7  refactor: replace custom form with Gleam widget as sole entry method
+    8544920  refactor: remove redundant bonus entry checkboxes (Gleam handles this)
+    be26b99  feat: add Gleam.io bonus entries widget section
+    087af0f  style: center social buttons in partner cards
+    ...      feat: add real social media URLs
+    ...      fix: resolve VS Code linting warnings
+
+
+────────────────────────────────────────────────────────────────────────────────
+  HOW TO MAKE COMMON CHANGES
+────────────────────────────────────────────────────────────────────────────────
+
+  Change giveaway dates:
+    → Update heroDates and heroAnnounce in BOTH en and es translation objects.
+    → Update legalText in both en and es (contains hardcoded dates).
+    → Update the hardcoded fallback text in the HTML hero section (data-key
+      elements show their fallback text before JS runs).
+
+  Change prize items:
+    → Edit the prizeItems array in BOTH en and es translation objects.
+    → Do NOT touch #prize-list in the HTML — it is populated by JS.
+
+  Change a social media URL:
+    → Find the <a href="..."> in the partners section HTML.
+    → Replace the href value only. Button text is managed by data-key.
+
+  Change partner descriptions:
+    → Edit poncakeDesc / dreamiDesc / khayferDesc in BOTH en and es.
+
+  Add a new section:
+    → Add HTML inside div.page-wrapper before the sticky-bar div.
+    → Add corresponding CSS block inside the <style> tag.
+    → If bilingual, add translation keys to both en and es objects.
+    → Add data-key="yourKey" attributes to elements that need translation.
+
+  Change the Gleam widget:
+    → Replace the href on the <a class="e-widget no-button"> with the new URL.
+    → The script tag does not need to change.
+
+  Re-add a custom form:
+    → Previous form code existed before commit 21798f7. You can reference git
+      history. The form collected name, email, and phone — but had no backend.
+      If re-adding, wire it to Formspree, Netlify Forms, or similar service.
+
+================================================================================
