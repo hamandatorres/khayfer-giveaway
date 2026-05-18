@@ -491,6 +491,13 @@
 				border-radius: var(--radius-lg);
 				padding: 24px 20px;
 				box-shadow: 0 6px 24px var(--shadow);
+				overflow: hidden;
+			}
+
+			/* Force Gleam's injected iframe to stay within its container */
+			#gleam-bonus iframe {
+				max-width: 100% !important;
+				width: 100% !important;
 			}
 
 			.gleam-desc {
