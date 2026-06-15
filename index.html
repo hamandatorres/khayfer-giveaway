@@ -6,9 +6,9 @@
 		<meta name="theme-color" content="#FF6B35" />
 		<meta
 			name="description"
-			content="Khayfer Liquidation x PoncakeA&A Summer Giveaway — Enter to win a Summer Gift Basket! May 19–23, 2025."
+			content="Khayfer and Poncake Giveaway — Enter June 15–30, 2025. Winner announced July 1, 2025."
 		/>
-		<title>Khayfer Giveaway × PoncakeA&A 🎉</title>
+		<title>Khayfer and Poncake Giveaway 🎉</title>
 
 		<!-- Google Fonts -->
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -312,64 +312,14 @@
 				border: 2px solid var(--border);
 				overflow: hidden;
 				box-shadow: 0 6px 24px var(--shadow);
+				padding: 14px;
 			}
 
-			.prize-header {
-				background: linear-gradient(
-					135deg,
-					var(--yellow) 0%,
-					var(--peach) 100%
-				);
-				padding: 24px 20px;
-				text-align: center;
-			}
-
-			.prize-emoji-large {
-				font-size: 3.2rem;
+			.prize-image {
 				display: block;
-				margin-bottom: 10px;
-			}
-
-			.prize-header h3 {
-				font-family: "Fredoka One", cursive;
-				font-size: 1.4rem;
-				color: var(--dark);
-			}
-
-			.prize-value-badge {
-				display: inline-block;
-				background: var(--coral);
-				color: #fff;
-				border-radius: 20px;
-				padding: 5px 16px;
-				font-size: 12px;
-				font-weight: 700;
-				margin-top: 10px;
-				letter-spacing: 0.3px;
-			}
-
-			#prize-list {
-				list-style: none;
-				padding: 20px;
-				display: grid;
-				grid-template-columns: 1fr 1fr;
-				gap: 12px;
-			}
-
-			#prize-list li {
-				font-size: 0.875rem;
-				font-weight: 700;
-				color: var(--dark);
-				display: flex;
-				align-items: center;
-				gap: 6px;
-				line-height: 1.3;
-			}
-
-			@media (max-width: 360px) {
-				#prize-list {
-					grid-template-columns: 1fr;
-				}
+				width: 100%;
+				height: auto;
+				border-radius: calc(var(--radius-lg) - 8px);
 			}
 
 			/* ============================================================
@@ -641,7 +591,7 @@
 					PoncakeA&A × Khayfer Liquidation
 				</div>
 				<span class="header-emoji" aria-hidden="true">🎉</span>
-				<h1 data-key="headerTitle">Win a Summer Gift Basket!</h1>
+				<h1 data-key="headerTitle">Khayfer and Poncake Giveaway</h1>
 			</header>
 
 			<!-- =====================================================
@@ -649,9 +599,9 @@
   ====================================================== -->
 			<section class="hero" aria-label="Giveaway dates">
 				<div class="dates-badge">
-					<span class="dates-main" data-key="heroDates">May 19–23, 2025</span>
+					<span class="dates-main" data-key="heroDates">June 15–30, 2025</span>
 					<span class="dates-announce" data-key="heroAnnounce"
-						>Winner announced May 24, 2025</span
+						>Winner announced July 1, 2025</span
 					>
 				</div>
 				<p class="hero-tagline" data-key="heroTagline">
@@ -709,7 +659,7 @@
 			</section>
 
 			<!-- =====================================================
-       PRIZE — SUMMER GIFT BASKET
+       PRIZE IMAGE
   ====================================================== -->
 			<section class="prize-section" aria-labelledby="prize-heading">
 				<h2 class="section-title" id="prize-heading" data-key="prizeTitle">
@@ -717,19 +667,12 @@
 				</h2>
 
 				<div class="prize-basket">
-					<!-- Basket header -->
-					<div class="prize-header">
-						<span class="prize-emoji-large" aria-hidden="true">🧺</span>
-						<h3 data-key="prizeSubtitle">Summer Gift Basket</h3>
-						<span class="prize-value-badge" data-key="prizeValue"
-							>Approximate retail value: ~$50</span
-						>
-					</div>
-
-					<!-- Items list — populated by JS so both languages work -->
-					<ul id="prize-list" aria-label="Prize contents">
-						<!-- Filled by renderPrizeItems() on load and on language toggle -->
-					</ul>
+					<img
+						class="prize-image"
+						src="IMG_8547.HEIC.png"
+						data-alt-key="prizeImageAlt"
+						alt="Prize photo for the Khayfer and Poncake giveaway"
+					/>
 				</div>
 			</section>
 
@@ -837,8 +780,8 @@
 				</h2>
 				<div class="gleam-card">
 					<p class="gleam-desc" data-key="gleamDesc">
-						Complete the actions below to enter the giveaway for a chance to win
-						the Summer Gift Basket!
+						Complete the actions below to enter the Khayfer and Poncake
+						giveaway.
 					</p>
 					<!-- Gleam.io embed — do not add the gleamjs script tag anywhere else on this page -->
 					<a
@@ -864,11 +807,10 @@
 				</h2>
 				<p id="legal-text" data-key="legalText">
 					NO PURCHASE NECESSARY TO ENTER OR WIN. Open to legal residents of the
-					United States, 18 years of age or older. Giveaway period: May 19–23,
-					2025. Winner announced May 24, 2025. One (1) winner will be selected
-					randomly from all eligible entries. Prize: Summer Gift Basket
-					(approximate retail value ~$50). Contents subject to change. Void
-					where prohibited by law.
+					United States, 18 years of age or older. Giveaway period: June 15–30,
+					2025. Winner announced July 1, 2025. One (1) winner will be selected
+					randomly from all eligible entries. Prize as pictured on this page.
+					Void where prohibited by law.
 					<br /><br />
 					This promotion is in no way sponsored, endorsed, administered by, or
 					associated with Facebook or Instagram. By participating, entrants
@@ -928,9 +870,9 @@
 				en: {
 					langBtn: "Español",
 					headerTagline: "PoncakeA\u0026A × Khayfer Liquidation",
-					headerTitle: "Win a Summer Gift Basket!",
-					heroDates: "May 19\u201323, 2025",
-					heroAnnounce: "Winner announced May 24, 2025",
+					headerTitle: "Khayfer and Poncake Giveaway",
+					heroDates: "June 15\u201330, 2025",
+					heroAnnounce: "Winner announced July 1, 2025",
 					heroTagline: "Scan. Enter. Win. It\u2019s that simple! \uD83C\uDF89",
 
 					stepsTitle: "How to Enter",
@@ -944,18 +886,7 @@
 					step3Desc: "Complete the entry widget below to enter the giveaway.",
 
 					prizeTitle: "The Prize \uD83C\uDF81",
-					prizeSubtitle: "Summer Gift Basket",
-					prizeValue: "Approximate retail value: ~$50",
-					prizeItems: [
-						"\uD83D\uDD2B 2x XShot Water Guns",
-						"\uD83C\uDFD6\uFE0F Travel / Beach Blanket",
-						"\uD83C\uDFCA White Towels",
-						"\u2728 Kirkland Dry Facial Towels",
-						"\uD83D\uDC53 Wipe N Clear Lens Wipes",
-						"\u2600\uFE0F UPF 50+ Sun Socks",
-						"\uD83D\uDDD1\uFE0F Candle",
-						"\uD83D\uDC8C Greeting Card",
-					],
+					prizeImageAlt: "Prize photo for the Khayfer and Poncake giveaway",
 
 					partnersTitle: "The Dream Team",
 					poncakeTitle: "PoncakeA\u0026A",
@@ -976,11 +907,11 @@
 
 					gleamTitle: "\uD83C\uDF81 Enter the Giveaway!",
 					gleamDesc:
-						"Complete the actions below to enter the giveaway for a chance to win the Summer Gift Basket!",
+						"Complete the actions below to enter the Khayfer and Poncake giveaway.",
 
 					legalTitle: "Official Rules & Disclaimer",
 					legalText:
-						"NO PURCHASE NECESSARY TO ENTER OR WIN. Open to legal residents of the United States, 18 years of age or older. Giveaway period: May 19\u201323, 2025. Winner announced May 24, 2025. One (1) winner will be selected randomly from all eligible entries. Prize: Summer Gift Basket (approximate retail value ~$50). Contents subject to change. Void where prohibited by law.<br><br>This promotion is in no way sponsored, endorsed, administered by, or associated with Facebook or Instagram. By participating, entrants acknowledge that Meta Platforms, Inc. bears no responsibility and is not liable for any claim related to this promotion. Any questions regarding this giveaway should be directed to Khayfer Liquidation, not to Meta Platforms, Inc. Sponsor: Khayfer Liquidation, Russellville, AR.",
+						"NO PURCHASE NECESSARY TO ENTER OR WIN. Open to legal residents of the United States, 18 years of age or older. Giveaway period: June 15\u201330, 2025. Winner announced July 1, 2025. One (1) winner will be selected randomly from all eligible entries. Prize as pictured on this page. Void where prohibited by law.<br><br>This promotion is in no way sponsored, endorsed, administered by, or associated with Facebook or Instagram. By participating, entrants acknowledge that Meta Platforms, Inc. bears no responsibility and is not liable for any claim related to this promotion. Any questions regarding this giveaway should be directed to Khayfer Liquidation, not to Meta Platforms, Inc. Sponsor: Khayfer Liquidation, Russellville, AR.",
 
 					footerText:
 						"\u00A9 2025 Khayfer Liquidation \u00D7 PoncakeA&A. All rights reserved.",
@@ -989,9 +920,9 @@
 				es: {
 					langBtn: "English",
 					headerTagline: "PoncakeA\u0026A × Khayfer Liquidation",
-					headerTitle: "\u00A1Gana una Canasta de Verano!",
-					heroDates: "19\u201323 de mayo de 2025",
-					heroAnnounce: "Ganador anunciado el 24 de mayo de 2025",
+					headerTitle: "Sorteo de Khayfer y Poncake",
+					heroDates: "15\u201330 de junio de 2025",
+					heroAnnounce: "Ganador anunciado el 1 de julio de 2025",
 					heroTagline:
 						"Escanea. Participa. Gana. \u00A1As\u00ED de f\u00E1cil! \uD83C\uDF89",
 
@@ -1007,18 +938,7 @@
 						"Completa el widget de participaci\u00F3n para ingresar al sorteo.",
 
 					prizeTitle: "El Premio \uD83C\uDF81",
-					prizeSubtitle: "Canasta de Verano",
-					prizeValue: "Valor aproximado al por menor: ~$50",
-					prizeItems: [
-						"\uD83D\uDD2B 2 Pistolas de Agua XShot",
-						"\uD83C\uDFD6\uFE0F Cobija para Playa/Viaje",
-						"\uD83C\uDFCA Toallas Blancas",
-						"\u2728 Toallas Faciales Secas Kirkland",
-						"\uD83D\uDC53 Toallitas Wipe N Clear para Lentes",
-						"\u2600\uFE0F Calcetines UPF 50+ Protecci\u00F3n Solar",
-						"\uD83D\uDDD1\uFE0F Vela Arom\u00E1tica",
-						"\uD83D\uDC8C Tarjeta de Felicitaci\u00F3n",
-					],
+					prizeImageAlt: "Foto del premio del sorteo de Khayfer y Poncake",
 
 					partnersTitle: "El Equipo So\u00F1ado",
 					poncakeTitle: "PoncakeA\u0026A",
@@ -1039,11 +959,11 @@
 
 					gleamTitle: "\uD83C\uDF81 \u00A1Participa en el Sorteo!",
 					gleamDesc:
-						"\u00A1Completa las acciones para participar y ganar la Canasta de Verano!",
+						"Completa las acciones para participar en el sorteo de Khayfer y Poncake.",
 
 					legalTitle: "Reglas Oficiales y Aviso Legal",
 					legalText:
-						"NO ES NECESARIO REALIZAR UNA COMPRA PARA PARTICIPAR O GANAR. Abierto a residentes legales de los Estados Unidos mayores de 18 a\u00F1os. Per\u00EDodo del sorteo: 19\u201323 de mayo de 2025. Ganador anunciado el 24 de mayo de 2025. Un (1) ganador ser\u00E1 seleccionado aleatoriamente entre todas las participaciones elegibles. Premio: Canasta de Verano (valor aproximado al por menor ~$50). El contenido puede variar. Nulo donde est\u00E9 prohibido por ley.<br><br>Esta promoci\u00F3n no est\u00E1 de ninguna manera patrocinada, avalada, administrada ni asociada con Facebook o Instagram. Al participar, los concursantes reconocen que Meta Platforms, Inc. no asume ninguna responsabilidad ni es responsable de ning\u00FAn reclamo relacionado con esta promoci\u00F3n. Cualquier pregunta sobre este sorteo debe dirigirse a Khayfer Liquidation, no a Meta Platforms, Inc. Patrocinador: Khayfer Liquidation, Russellville, AR.",
+						"NO ES NECESARIO REALIZAR UNA COMPRA PARA PARTICIPAR O GANAR. Abierto a residentes legales de los Estados Unidos mayores de 18 a\u00F1os. Per\u00EDodo del sorteo: 15\u201330 de junio de 2025. Ganador anunciado el 1 de julio de 2025. Un (1) ganador ser\u00E1 seleccionado aleatoriamente entre todas las participaciones elegibles. Premio como se muestra en esta p\u00E1gina. Nulo donde est\u00E9 prohibido por ley.<br><br>Esta promoci\u00F3n no est\u00E1 de ninguna manera patrocinada, avalada, administrada ni asociada con Facebook o Instagram. Al participar, los concursantes reconocen que Meta Platforms, Inc. no asume ninguna responsabilidad ni es responsable de ning\u00FAn reclamo relacionado con esta promoci\u00F3n. Cualquier pregunta sobre este sorteo debe dirigirse a Khayfer Liquidation, no a Meta Platforms, Inc. Patrocinador: Khayfer Liquidation, Russellville, AR.",
 
 					footerText:
 						"\u00A9 2025 Khayfer Liquidation \u00D7 PoncakeA&A. Todos los derechos reservados.",
@@ -1104,21 +1024,14 @@
 					}
 				}
 
-				// Re-render the prize items list (array, not a string)
-				renderPrizeItems(lang);
-			}
-
-			/* ==============================================================
-     PRIZE ITEMS LIST — renders from the prizeItems array
-  ============================================================== */
-			function renderPrizeItems(lang) {
-				var list = document.getElementById("prize-list");
-				var items = translations[lang].prizeItems;
-				var html = "";
-				for (var i = 0; i < items.length; i++) {
-					html += "<li>" + items[i] + "</li>";
+				var altEls = document.querySelectorAll("[data-alt-key]");
+				for (var k = 0; k < altEls.length; k++) {
+					var altEl = altEls[k];
+					var altKey = altEl.getAttribute("data-alt-key");
+					if (t[altKey] !== undefined) {
+						altEl.alt = t[altKey];
+					}
 				}
-				list.innerHTML = html;
 			}
 
 			/* ==============================================================
@@ -1152,10 +1065,10 @@
 			})();
 
 			/* ==============================================================
-     INIT — render prize items on first load (English default)
+     INIT — apply default language content
   ============================================================== */
 			(function init() {
-				renderPrizeItems("en");
+				applyLanguage("en");
 			})();
 		</script>
 	</body>

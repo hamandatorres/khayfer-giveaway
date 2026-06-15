@@ -1,12 +1,12 @@
-# Khayfer Giveaway × PoncakeA&A 🎉
+# Khayfer and Poncake Giveaway 🎉
 
-Mobile-first giveaway landing page for the **Khayfer Liquidation × PoncakeA&A** Summer Giveaway.
+Mobile-first giveaway landing page for the **Khayfer Liquidation × PoncakeA&A** giveaway campaign.
 
 ## About the Giveaway
 
-- **Dates:** May 19–23, 2025
-- **Winner announced:** May 24, 2025
-- **Prize:** Summer Gift Basket (~$50 ARV)
+- **Dates:** June 15–30, 2025
+- **Winner announced:** July 1, 2025
+- **Prize:** Static prize image shown on the landing page
 - **Hosted by:** Khayfer Liquidation, Russellville, AR
 - **Pastry partner:** PoncakeA&A (available online & at Dreami Tea in Russellville, AR)
 
@@ -17,7 +17,7 @@ Mobile-first giveaway landing page for the **Khayfer Liquidation × PoncakeA&A**
 - ✅ Entry form with client-side validation and thank-you confirmation
 - 📌 Sticky "Enter Now" bottom bar that auto-hides when form is in view
 - 📋 Legal disclaimer (No purchase necessary, Meta liability release) in both languages
-- 🎨 Summer-themed design — Fredoka One + Nunito fonts, coral/orange/yellow palette
+- 🎨 Playful giveaway design — Fredoka One + Nunito fonts, coral/orange/yellow palette
 
 ## How to Deploy
 
